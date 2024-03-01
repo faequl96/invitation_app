@@ -19,16 +19,16 @@ class SealInvitation extends StatelessWidget {
         alignment: Alignment.center,
         child: ClipRect(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
             child: Container(
               height: double.maxFinite,
               width: 48,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white.withOpacity(0.06),
-                    Colors.grey.withOpacity(0.06),
-                    Colors.white.withOpacity(0.06),
+                    Colors.white.withOpacity(0.056),
+                    Colors.grey.withOpacity(0.056),
+                    Colors.white.withOpacity(0.056),
                   ],
                   stops: const [0.4, 0.6, 1],
                 ),

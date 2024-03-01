@@ -4,13 +4,13 @@ class LeftBackground extends StatelessWidget {
   const LeftBackground({
     super.key,
     this.isLightEffect,
-    this.scrollValue = 0,
+    this.moveValue = 0,
     this.flashValue = 0,
     this.opacityValue = 0,
   });
 
   final bool? isLightEffect;
-  final double scrollValue;
+  final double moveValue;
   final double flashValue;
   final double opacityValue;
 
@@ -43,18 +43,43 @@ class LeftBackground extends StatelessWidget {
                   ),
                 ),
                 Positioned(
+                  right: 0,
+                  bottom: 120,
+                  child: Container(
+                    height: 140,
+                    width: size.width / 2 - 30,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(14),
+                        bottomLeft: Radius.circular(14),
+                      ),
+                      color: Color.fromARGB(255, 230, 211, 164),
+                    ),
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(8),
+                          bottomLeft: Radius.circular(8),
+                        ),
+                        color: Color.fromARGB(255, 255, 250, 230),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
                   right: -1,
                   child: Container(
                     height: size.height,
                     width: size.width / 2,
-                    decoration: scrollValue > 1
+                    decoration: moveValue > 1
                         ? BoxDecoration(
                             gradient: LinearGradient(
                               begin: Alignment.centerRight,
                               end: Alignment.centerLeft,
                               colors: [
                                 Colors.white.withOpacity(flashValue),
-                                Colors.transparent.withOpacity(0),
+                                Colors.transparent,
                               ],
                             ),
                           )

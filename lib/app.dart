@@ -17,6 +17,8 @@ class _AppState extends State<App> {
   final PageController _pageController = PageController();
 
   double scrollValue = 0;
+
+  double moveValue = 0;
   double opacityValue = 1;
   double flashValue = 1;
 
@@ -24,9 +26,13 @@ class _AppState extends State<App> {
   bool isSealOpened = false;
   bool isOpenCompleted = false;
 
+  String _toName = "";
+
   @override
   void initState() {
     _pageController.addListener(_scrollListener);
+
+    _toName = Uri.base.queryParameters["to"] ?? "";
     super.initState();
   }
 
@@ -46,39 +52,80 @@ class _AppState extends State<App> {
               color: Colors.white.withOpacity(opacityValue),
             ),
             Positioned(
-              right: -scrollValue,
+              right: -moveValue,
               child: RightBackground(
                 isLightEffect: true,
                 opacityValue: opacityValue,
               ),
             ),
             Positioned(
-              left: -scrollValue,
+              left: -moveValue,
               child: LeftBackground(
                 isLightEffect: true,
                 opacityValue: opacityValue,
               ),
             ),
             Positioned(
-              right: -scrollValue,
+              right: -moveValue,
               child: RightBackground(
-                scrollValue: scrollValue,
+                moveValue: moveValue,
                 flashValue: flashValue,
                 opacityValue: opacityValue,
               ),
             ),
             Positioned(
-              left: -scrollValue,
+              left: -moveValue,
               child: LeftBackground(
-                scrollValue: scrollValue,
+                moveValue: moveValue,
                 flashValue: flashValue,
                 opacityValue: opacityValue,
               ),
             ),
             Positioned(
-              right: -scrollValue,
+              right: -moveValue,
               child: const RightBackground(isTransparent: true),
             ),
+            Positioned(
+              bottom: 360 - (scrollValue / 20),
+              child: SizedBox(
+                width: size.width,
+                height: 120,
+                child: Center(
+                  child: Opacity(
+                    opacity: flashValue,
+                    child: const Text(
+                      "WEDDING\nINVITATION",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 230, 211, 164),
+                        height: 1.2,
+                        letterSpacing: 7,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            if (scrollValue == 0)
+              Positioned(
+                bottom: 164,
+                child: SizedBox(
+                  width: size.width,
+                  height: 60,
+                  child: Center(
+                    child: Text(
+                      "To : $_toName",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
@@ -146,7 +193,8 @@ class _AppState extends State<App> {
 
     final double dividedSize = size.height / size.width;
 
-    scrollValue = (_pageController.offset / dividedSize) / 2;
+    scrollValue = _pageController.offset;
+    moveValue = (_pageController.offset / dividedSize) / 2;
 
     final double opacity = size.height / 20;
     if (_pageController.offset < opacity) {
