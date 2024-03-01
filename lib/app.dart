@@ -18,7 +18,7 @@ class _AppState extends State<App> {
 
   double scrollValue = 0;
   double opacityValue = 1;
-  double flashValue = 0.8;
+  double flashValue = 1;
 
   bool isKeyOpened = false;
   bool isSealOpened = false;
@@ -48,8 +48,23 @@ class _AppState extends State<App> {
             Positioned(
               right: -scrollValue,
               child: RightBackground(
+                isLightEffect: true,
+                opacityValue: opacityValue,
+              ),
+            ),
+            Positioned(
+              left: -scrollValue,
+              child: LeftBackground(
+                isLightEffect: true,
+                opacityValue: opacityValue,
+              ),
+            ),
+            Positioned(
+              right: -scrollValue,
+              child: RightBackground(
                 scrollValue: scrollValue,
                 flashValue: flashValue,
+                opacityValue: opacityValue,
               ),
             ),
             Positioned(
@@ -57,15 +72,12 @@ class _AppState extends State<App> {
               child: LeftBackground(
                 scrollValue: scrollValue,
                 flashValue: flashValue,
+                opacityValue: opacityValue,
               ),
             ),
             Positioned(
               right: -scrollValue,
-              child: RightBackground(
-                isTransparent: true,
-                scrollValue: scrollValue,
-                flashValue: flashValue,
-              ),
+              child: const RightBackground(isTransparent: true),
             ),
             Stack(
               alignment: AlignmentDirectional.bottomCenter,
