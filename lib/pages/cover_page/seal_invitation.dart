@@ -26,9 +26,9 @@ class SealInvitation extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white.withOpacity(0.08),
-                    Colors.grey.shade600.withOpacity(0.08),
-                    Colors.white.withOpacity(0.08),
+                    Colors.white.withOpacity(0.06),
+                    Colors.grey.withOpacity(0.06),
+                    Colors.white.withOpacity(0.06),
                   ],
                   stops: const [0.4, 0.6, 1],
                 ),
