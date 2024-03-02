@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invitation_app/enum/enums.dart';
+import 'package:invitation_app/models/date_countdown_scroll_value.dart';
+import 'package:invitation_app/pages/cover_page/countdown.dart';
 import 'package:invitation_app/pages/cover_page/key_invitation.dart';
 import 'package:invitation_app/pages/cover_page/right_bg.dart';
 import 'package:invitation_app/pages/cover_page/left_bg.dart';
@@ -22,6 +25,15 @@ class _AppState extends State<App> {
   double opacityValue = 1;
   double flashValue = 1;
 
+  DateCountdownScrollValue dCScrollValue1 = DateCountdownScrollValue(
+    xMove: 0,
+    yMove: 0,
+  );
+  DateCountdownScrollValue dCScrollValue2 = DateCountdownScrollValue(
+    xMove: 0,
+    yMove: 0,
+  );
+
   bool isKeyOpened = false;
   bool isSealOpened = false;
   bool isOpenCompleted = false;
@@ -30,6 +42,10 @@ class _AppState extends State<App> {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _setCountdownScrollValue();
+    });
+
     _pageController.addListener(_scrollListener);
 
     _toName = Uri.base.queryParameters["to"] ?? "";
@@ -86,7 +102,7 @@ class _AppState extends State<App> {
               child: const RightBackground(isTransparent: true),
             ),
             Positioned(
-              bottom: 360 - (scrollValue / 20),
+              bottom: 350 - (scrollValue / 14),
               child: SizedBox(
                 width: size.width,
                 height: 120,
@@ -97,16 +113,76 @@ class _AppState extends State<App> {
                       "WEDDING\nINVITATION",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 36,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 230, 211, 164),
                         height: 1.2,
-                        letterSpacing: 7,
+                        letterSpacing: 10,
                       ),
                     ),
                   ),
                 ),
               ),
+            ),
+            Positioned(
+              left: dCScrollValue2.xMove >= (80 + ((size.width - 180) / 4)) &&
+                      dCScrollValue2.xMove <=
+                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                  ? dCScrollValue2.xMove
+                  : dCScrollValue2.xMove < (80 + ((size.width - 180) / 4))
+                      ? (80 + ((size.width - 180) / 4))
+                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+              bottom: dCScrollValue2.yMove >= 40
+                  ? dCScrollValue2.yMove
+                  : dCScrollValue2.yMove < 40
+                      ? 40
+                      : 270,
+              child: const CountDown(unitTimeType: UnitTimeType.Hour),
+            ),
+            Positioned(
+              right: dCScrollValue2.xMove >= (80 + ((size.width - 180) / 4)) &&
+                      dCScrollValue2.xMove <=
+                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                  ? dCScrollValue2.xMove
+                  : dCScrollValue2.xMove < (80 + ((size.width - 180) / 4))
+                      ? (80 + ((size.width - 180) / 4))
+                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+              bottom: dCScrollValue2.yMove >= 40
+                  ? dCScrollValue2.yMove
+                  : dCScrollValue2.yMove < 40
+                      ? 40
+                      : 270,
+              child: const CountDown(unitTimeType: UnitTimeType.Minute),
+            ),
+            Positioned(
+              right: dCScrollValue1.xMove >= 60 &&
+                      dCScrollValue1.xMove <=
+                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                  ? dCScrollValue1.xMove
+                  : dCScrollValue1.xMove < 60
+                      ? 60
+                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+              bottom: dCScrollValue1.yMove >= 40
+                  ? dCScrollValue1.yMove
+                  : dCScrollValue1.yMove < 40
+                      ? 40
+                      : 270,
+              child: const CountDown(unitTimeType: UnitTimeType.Second),
+            ),
+            Positioned(
+              left: dCScrollValue1.xMove >= 60 &&
+                      dCScrollValue1.xMove <=
+                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                  ? dCScrollValue1.xMove
+                  : dCScrollValue1.xMove < 60
+                      ? 60
+                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+              bottom: dCScrollValue1.yMove >= 40
+                  ? dCScrollValue1.yMove
+                  : dCScrollValue1.yMove < 40
+                      ? 40
+                      : 270,
+              child: const CountDown(unitTimeType: UnitTimeType.Day),
             ),
             if (scrollValue == 0)
               Positioned(
@@ -188,6 +264,17 @@ class _AppState extends State<App> {
     );
   }
 
+  void _setCountdownScrollValue() {
+    final Size size = MediaQuery.of(context).size;
+
+    dCScrollValue1 = DateCountdownScrollValue(xMove: 60, yMove: 270);
+    dCScrollValue2 = DateCountdownScrollValue(
+      xMove: 80 + ((size.width - 180) / 4),
+      yMove: 270,
+    );
+    setState(() {});
+  }
+
   _scrollListener() {
     final Size size = MediaQuery.of(context).size;
 
@@ -195,6 +282,40 @@ class _AppState extends State<App> {
 
     scrollValue = _pageController.offset;
     moveValue = (_pageController.offset / dividedSize) / 2;
+
+    if (_pageController.offset > 0 &&
+        _pageController.offset <= size.height / 3) {
+      dCScrollValue1 = DateCountdownScrollValue(
+        xMove: 60 + _pageController.offset,
+        yMove: 270,
+      );
+      dCScrollValue2 = DateCountdownScrollValue(
+        xMove: (80 + ((size.width - 180) / 4)) + _pageController.offset,
+        yMove: 270,
+      );
+    } else if (_pageController.offset > size.height / 3 &&
+        _pageController.offset <= (size.height / 3) * 2) {
+      dCScrollValue1 = DateCountdownScrollValue(
+        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
+        yMove: 270 - (_pageController.offset - (size.height / 3)),
+      );
+      dCScrollValue2 = DateCountdownScrollValue(
+        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
+        yMove: 270 - (_pageController.offset - (size.height / 3)),
+      );
+    } else if (_pageController.offset > size.height / 3 &&
+        _pageController.offset <= (size.height / 3) * 3) {
+      dCScrollValue1 = DateCountdownScrollValue(
+        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
+            (_pageController.offset - ((size.height / 3) * 2)),
+        yMove: 270 - (_pageController.offset - (size.height / 3)),
+      );
+      dCScrollValue2 = DateCountdownScrollValue(
+        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
+            (_pageController.offset - ((size.height / 3) * 2)),
+        yMove: 270 - (_pageController.offset - (size.height / 3)),
+      );
+    }
 
     final double opacity = size.height / 20;
     if (_pageController.offset < opacity) {
@@ -231,12 +352,15 @@ class _AppState extends State<App> {
     } else if (_pageController.offset > opacity * 8 &&
         _pageController.offset <= opacity * 9) {
       opacityValue = 0.6;
+      flashValue = 0;
     } else if (_pageController.offset > opacity * 9 &&
         _pageController.offset <= opacity * 10) {
       opacityValue = 0.55;
+      flashValue = 0;
     } else if (_pageController.offset > opacity * 10 &&
         _pageController.offset <= opacity * 11) {
       opacityValue = 0.5;
+      flashValue = 0;
     } else if (_pageController.offset > opacity * 11 &&
         _pageController.offset <= opacity * 12) {
       opacityValue = 0.45;

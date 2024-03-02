@@ -46,8 +46,8 @@ class LeftBackground extends StatelessWidget {
                   right: 0,
                   bottom: 120,
                   child: Container(
-                    height: 140,
-                    width: size.width / 2 - 30,
+                    height: 130,
+                    width: size.width / 2 - 40,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(14),
@@ -88,7 +88,7 @@ class LeftBackground extends StatelessWidget {
                 ),
                 const Positioned(
                   right: -30,
-                  top: 60,
+                  bottom: 480,
                   child: Image(
                     width: 140,
                     fit: BoxFit.cover,
