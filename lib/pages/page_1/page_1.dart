@@ -24,6 +24,7 @@ class Page1 extends StatelessWidget {
         ),
       ),
       child: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
         children: [
           Positioned(
             bottom: 250,
@@ -37,100 +38,71 @@ class Page1 extends StatelessWidget {
                   image: AssetImage("assets/unifying_frame.png"),
                 ),
               ),
-              child: Stack(
-                children: [
-                  scrollValue > size.height - 70
-                      ? AnimatedPositioned(
-                          duration: const Duration(milliseconds: 500),
-                          top: 90,
-                          left: scrollValue > size.height - 50 ? -30 : 60,
-                          child: SizedBox(
-                            height: 60,
-                            width: size.width,
-                            child: const Center(
-                              child: Text(
-                                "Betina",
-                                style: TextStyle(
-                                  fontFamily: "BrushScriptMT",
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 230, 211, 164),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      : const SizedBox.shrink(),
-                  scrollValue > size.height - 20
-                      ? Positioned(
-                          top: 134,
-                          left: -34,
-                          child: SizedBox(
-                            height: 80,
-                            width: size.width,
-                            child: Center(
-                              child: AnimatedOpacity(
-                                duration: const Duration(milliseconds: 300),
-                                opacity: scrollValue > size.height - 1 ? 1 : 0,
-                                child: const Text(
-                                  "&",
-                                  style: TextStyle(
-                                    fontFamily: "BrushScriptMT",
-                                    fontSize: 56,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 230, 211, 164),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      : const SizedBox.shrink(),
-                  scrollValue > size.height - 70
-                      ? AnimatedPositioned(
-                          duration: const Duration(milliseconds: 500),
-                          top: 190,
-                          right: scrollValue > size.height - 50 ? -36 : 66,
-                          child: SizedBox(
-                            height: 60,
-                            width: size.width,
-                            child: const Center(
-                              child: Text(
-                                "Jantan",
-                                style: TextStyle(
-                                  fontFamily: "BrushScriptMT",
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 230, 211, 164),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      : const SizedBox.shrink(),
-                ],
-              ),
             ),
           ),
           scrollValue > size.height - 70
               ? AnimatedPositioned(
-                  duration: const Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 300),
+                  bottom: 444,
+                  right: scrollValue > size.height - 50 ? 140 : 40,
+                  child: const Text(
+                    "Betina",
+                    style: TextStyle(
+                      fontFamily: "BrushScriptMT",
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 230, 211, 164),
+                    ),
+                  ),
+                )
+              : const SizedBox.shrink(),
+          scrollValue > size.height - 20
+              ? Positioned(
+                  bottom: 384,
+                  child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 500),
+                    opacity: scrollValue > size.height - 1 ? 1 : 0,
+                    child: const Text(
+                      "&",
+                      style: TextStyle(
+                        fontFamily: "BrushScriptMT",
+                        fontSize: 56,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 230, 211, 164),
+                      ),
+                    ),
+                  ),
+                )
+              : const SizedBox.shrink(),
+          scrollValue > size.height - 70
+              ? AnimatedPositioned(
+                  duration: const Duration(milliseconds: 300),
+                  bottom: 344,
+                  left: scrollValue > size.height - 50 ? 140 : 40,
+                  child: const Text(
+                    "Jantan",
+                    style: TextStyle(
+                      fontFamily: "BrushScriptMT",
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 230, 211, 164),
+                    ),
+                  ),
+                )
+              : const SizedBox.shrink(),
+          scrollValue > size.height - 70
+              ? AnimatedPositioned(
+                  duration: const Duration(milliseconds: 300),
                   bottom: scrollValue > size.height - 50 ? 120 : 50,
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 500),
                     opacity: scrollValue > size.height - 50 ? 1 : 0.1,
-                    child: SizedBox(
-                      height: 30,
-                      width: size.width,
-                      child: Center(
-                        child: Text(
-                          dateFormater.format(_dateTime),
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            color: Colors.white,
-                          ),
-                        ),
+                    child: Text(
+                      dateFormater.format(_dateTime),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                        color: Colors.white,
                       ),
                     ),
                   ),
