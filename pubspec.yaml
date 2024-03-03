@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +21,8 @@ flutter:
   
   assets:
     - assets/
+  
+  fonts:
+    - family: BrushScriptMT
+      fonts:
+        - asset: fonts/Brush-Script-MT-Regular.ttf

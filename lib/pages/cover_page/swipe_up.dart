@@ -14,19 +14,19 @@ class SwipeUp extends StatefulWidget {
 class _SwipeUpState extends State<SwipeUp> {
   late Timer _timer;
 
-  double arrow1 = 36;
-  double arrow2 = 50;
+  double arrow1 = 26;
+  double arrow2 = 40;
 
   bool isShowed = false;
 
   void periodic() {
     _timer = Timer.periodic(const Duration(milliseconds: 300), (timer) {
       if (timer.tick % 2 == 0) {
-        arrow1 = 166;
-        arrow2 = 180;
+        arrow1 = 116;
+        arrow2 = 130;
       } else {
-        arrow1 = 36;
-        arrow2 = 50;
+        arrow1 = 26;
+        arrow2 = 40;
         isShowed = !isShowed;
       }
 
@@ -87,7 +87,7 @@ class _SwipeUpState extends State<SwipeUp> {
                 )
               : const SizedBox.shrink(),
           const Positioned(
-            bottom: 16,
+            bottom: 12,
             child: Text(
               "Geser ke atas",
               style: TextStyle(color: Color.fromARGB(255, 230, 211, 164)),

@@ -15,7 +15,7 @@ class CountDown extends StatefulWidget {
 class _CountDownState extends State<CountDown> {
   late Timer _timer;
 
-  final DateTime dateTime = DateTime(2024, 3, 10, 23, 40);
+  final DateTime dateTime = DateTime(2024, 3, 10, 9);
 
   String day = "";
   String hour = "";

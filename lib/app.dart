@@ -61,7 +61,7 @@ class _AppState extends State<App> {
       home: Scaffold(
         body: Stack(
           children: [
-            const Page1(),
+            Page1(scrollValue: scrollValue),
             Container(
               height: size.height,
               width: size.width,
@@ -102,25 +102,29 @@ class _AppState extends State<App> {
               child: const RightBackground(isTransparent: true),
             ),
             Positioned(
-              bottom: 350 - (scrollValue / 14),
+              bottom: 600 + (scrollValue / 14),
               child: SizedBox(
                 width: size.width,
                 height: 120,
-                child: Center(
-                  child: Opacity(
-                    opacity: flashValue,
-                    child: const Text(
-                      "WEDDING\nINVITATION",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 230, 211, 164),
-                        height: 1.2,
-                        letterSpacing: 10,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(width: 4),
+                    Opacity(
+                      opacity: flashValue,
+                      child: const Text(
+                        "WEDDING\nINVITATION",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 230, 211, 164),
+                          height: 1.2,
+                          letterSpacing: 10,
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
@@ -136,7 +140,7 @@ class _AppState extends State<App> {
                   ? dCScrollValue2.yMove
                   : dCScrollValue2.yMove < 40
                       ? 40
-                      : 270,
+                      : 250,
               child: const CountDown(unitTimeType: UnitTimeType.Hour),
             ),
             Positioned(
@@ -151,7 +155,7 @@ class _AppState extends State<App> {
                   ? dCScrollValue2.yMove
                   : dCScrollValue2.yMove < 40
                       ? 40
-                      : 270,
+                      : 250,
               child: const CountDown(unitTimeType: UnitTimeType.Minute),
             ),
             Positioned(
@@ -166,7 +170,7 @@ class _AppState extends State<App> {
                   ? dCScrollValue1.yMove
                   : dCScrollValue1.yMove < 40
                       ? 40
-                      : 270,
+                      : 250,
               child: const CountDown(unitTimeType: UnitTimeType.Second),
             ),
             Positioned(
@@ -181,7 +185,7 @@ class _AppState extends State<App> {
                   ? dCScrollValue1.yMove
                   : dCScrollValue1.yMove < 40
                       ? 40
-                      : 270,
+                      : 250,
               child: const CountDown(unitTimeType: UnitTimeType.Day),
             ),
             if (scrollValue == 0)
@@ -192,11 +196,10 @@ class _AppState extends State<App> {
                   height: 60,
                   child: Center(
                     child: Text(
-                      "To : $_toName",
-                      style: TextStyle(
-                        fontSize: 24,
+                      "to : $_toName",
+                      style: const TextStyle(
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade700,
                       ),
                     ),
                   ),
@@ -267,10 +270,10 @@ class _AppState extends State<App> {
   void _setCountdownScrollValue() {
     final Size size = MediaQuery.of(context).size;
 
-    dCScrollValue1 = DateCountdownScrollValue(xMove: 60, yMove: 270);
+    dCScrollValue1 = DateCountdownScrollValue(xMove: 60, yMove: 250);
     dCScrollValue2 = DateCountdownScrollValue(
       xMove: 80 + ((size.width - 180) / 4),
-      yMove: 270,
+      yMove: 250,
     );
     setState(() {});
   }
@@ -287,33 +290,33 @@ class _AppState extends State<App> {
         _pageController.offset <= size.height / 3) {
       dCScrollValue1 = DateCountdownScrollValue(
         xMove: 60 + _pageController.offset,
-        yMove: 270,
+        yMove: 250,
       );
       dCScrollValue2 = DateCountdownScrollValue(
         xMove: (80 + ((size.width - 180) / 4)) + _pageController.offset,
-        yMove: 270,
+        yMove: 250,
       );
     } else if (_pageController.offset > size.height / 3 &&
         _pageController.offset <= (size.height / 3) * 2) {
       dCScrollValue1 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
-        yMove: 270 - (_pageController.offset - (size.height / 3)),
+        yMove: 250 - (_pageController.offset - (size.height / 3)),
       );
       dCScrollValue2 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
-        yMove: 270 - (_pageController.offset - (size.height / 3)),
+        yMove: 250 - (_pageController.offset - (size.height / 3)),
       );
-    } else if (_pageController.offset > size.height / 3 &&
+    } else if (_pageController.offset > (size.height / 3) * 2 &&
         _pageController.offset <= (size.height / 3) * 3) {
       dCScrollValue1 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
             (_pageController.offset - ((size.height / 3) * 2)),
-        yMove: 270 - (_pageController.offset - (size.height / 3)),
+        yMove: 250 - (_pageController.offset - (size.height / 3)),
       );
       dCScrollValue2 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
             (_pageController.offset - ((size.height / 3) * 2)),
-        yMove: 270 - (_pageController.offset - (size.height / 3)),
+        yMove: 250 - (_pageController.offset - (size.height / 3)),
       );
     }
 

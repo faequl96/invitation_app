@@ -44,7 +44,7 @@ class LeftBackground extends StatelessWidget {
                 ),
                 Positioned(
                   right: 0,
-                  bottom: 120,
+                  bottom: 100,
                   child: Container(
                     height: 130,
                     width: size.width / 2 - 40,
@@ -88,7 +88,7 @@ class LeftBackground extends StatelessWidget {
                 ),
                 const Positioned(
                   right: -30,
-                  bottom: 480,
+                  bottom: 360,
                   child: Image(
                     width: 140,
                     fit: BoxFit.cover,
