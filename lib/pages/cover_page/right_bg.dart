@@ -132,7 +132,7 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const Positioned(
                         left: -30,
-                        bottom: 360,
+                        bottom: 340,
                         child: Image(
                           width: 140,
                           fit: BoxFit.cover,

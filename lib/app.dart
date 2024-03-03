@@ -124,7 +124,7 @@ class _AppState extends State<App> {
             //   ),
             // ),
             Positioned(
-              bottom: 654 + (scrollValue / 14),
+              bottom: 634 + (scrollValue / 14),
               left: 54,
               child: Opacity(
                 opacity: flashValue,
@@ -141,7 +141,7 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              bottom: 600 + (scrollValue / 14),
+              bottom: 580 + (scrollValue / 14),
               right: 54,
               child: Opacity(
                 opacity: flashValue,
@@ -220,7 +220,7 @@ class _AppState extends State<App> {
             if (scrollValue == 0)
               if (_toName.isNotEmpty)
                 Positioned(
-                  bottom: 172,
+                  bottom: 170,
                   child: Row(
                     children: [
                       const Text("Buat : ", style: TextStyle(fontSize: 20)),
@@ -237,14 +237,16 @@ class _AppState extends State<App> {
             if (scrollValue == 0)
               if (_instance.isNotEmpty)
                 Positioned(
-                  bottom: 130,
+                  bottom: 118,
+                  width: size.width,
+                  height: 60,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
                         image: AssetImage("$_instance.png"),
                         height: 30,
-                        width: 90,
                         fit: BoxFit.fitHeight,
                       ),
                       const SizedBox(width: 10),
