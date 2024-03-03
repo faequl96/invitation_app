@@ -41,18 +41,18 @@ class Page1 extends StatelessWidget {
             ),
           ),
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 400),
             bottom: 444,
             right: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
               child: const Text(
                 "Betina",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
                   fontSize: 50,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   color: Color.fromARGB(255, 230, 211, 164),
                 ),
               ),
@@ -61,42 +61,42 @@ class Page1 extends StatelessWidget {
           Positioned(
             bottom: 384,
             child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 1 ? 1 : 0,
               child: const Text(
                 "&",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
                   fontSize: 56,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   color: Color.fromARGB(255, 230, 211, 164),
                 ),
               ),
             ),
           ),
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 400),
             bottom: 344,
             left: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
               child: const Text(
                 "Jantan",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
                   fontSize: 50,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   color: Color.fromARGB(255, 230, 211, 164),
                 ),
               ),
             ),
           ),
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 400),
             bottom: scrollValue > size.height - 50 ? 120 : 50,
             child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
               child: Text(
                 dateFormater.format(_dateTime),

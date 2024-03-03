@@ -60,6 +60,7 @@ class _AppState extends State<App> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
+          alignment: AlignmentDirectional.bottomCenter,
           children: [
             Page1(scrollValue: scrollValue),
             Container(
@@ -101,30 +102,54 @@ class _AppState extends State<App> {
               right: -moveValue,
               child: const RightBackground(isTransparent: true),
             ),
+            // Positioned(
+            //   bottom: 600 + (scrollValue / 14),
+            //   child: Opacity(
+            //     opacity: flashValue,
+            //     child: const Text(
+            //       "WEDDING\nINVITATION",
+            //       textAlign: TextAlign.center,
+            //       style: TextStyle(
+            //         fontSize: 38,
+            //         fontWeight: FontWeight.w800,
+            //         color: Color.fromARGB(255, 230, 211, 164),
+            //         height: 1.2,
+            //         letterSpacing: 6,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            Positioned(
+              bottom: 650 + (scrollValue / 14),
+              left: 54,
+              child: Opacity(
+                opacity: flashValue,
+                child: const Text(
+                  "Wedding",
+                  style: TextStyle(
+                    fontFamily: "BrushScriptMT",
+                    fontSize: 66,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 230, 211, 164),
+                    height: 1.2,
+                  ),
+                ),
+              ),
+            ),
             Positioned(
               bottom: 600 + (scrollValue / 14),
-              child: SizedBox(
-                width: size.width,
-                height: 120,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const SizedBox(width: 4),
-                    Opacity(
-                      opacity: flashValue,
-                      child: const Text(
-                        "WEDDING\nINVITATION",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 230, 211, 164),
-                          height: 1.2,
-                          letterSpacing: 10,
-                        ),
-                      ),
-                    ),
-                  ],
+              right: 54,
+              child: Opacity(
+                opacity: flashValue,
+                child: const Text(
+                  "Invitation",
+                  style: TextStyle(
+                    fontFamily: "BrushScriptMT",
+                    fontSize: 66,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 230, 211, 164),
+                    height: 1.2,
+                  ),
                 ),
               ),
             ),
