@@ -124,7 +124,7 @@ class _AppState extends State<App> {
             //   ),
             // ),
             Positioned(
-              bottom: 634 + (scrollValue / 14),
+              bottom: 626 + (scrollValue / 14),
               left: 54,
               child: Opacity(
                 opacity: flashValue,
@@ -141,7 +141,7 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              bottom: 580 + (scrollValue / 14),
+              bottom: 572 + (scrollValue / 14),
               right: 54,
               child: Opacity(
                 opacity: flashValue,
@@ -237,9 +237,7 @@ class _AppState extends State<App> {
             if (scrollValue == 0)
               if (_instance.isNotEmpty)
                 Positioned(
-                  bottom: 118,
-                  width: size.width,
-                  height: 60,
+                  bottom: 132,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -249,7 +247,7 @@ class _AppState extends State<App> {
                         height: 30,
                         fit: BoxFit.fitHeight,
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

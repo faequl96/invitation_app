@@ -132,9 +132,9 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const Positioned(
                         left: -30,
-                        bottom: 340,
+                        bottom: 346,
                         child: Image(
-                          width: 140,
+                          width: 134,
                           fit: BoxFit.cover,
                           image: AssetImage("assets/kelir_jawa_gold.png"),
                         ),
