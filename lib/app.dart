@@ -244,6 +244,7 @@ class _AppState extends State<App> {
                       Image(
                         image: AssetImage("$_instance.png"),
                         height: 30,
+                        width: 90,
                         fit: BoxFit.fitHeight,
                       ),
                       const SizedBox(width: 10),
