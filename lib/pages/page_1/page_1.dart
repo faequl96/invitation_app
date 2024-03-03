@@ -40,74 +40,74 @@ class Page1 extends StatelessWidget {
               ),
             ),
           ),
-          scrollValue > size.height - 70
-              ? AnimatedPositioned(
-                  duration: const Duration(milliseconds: 300),
-                  bottom: 444,
-                  right: scrollValue > size.height - 50 ? 140 : 40,
-                  child: const Text(
-                    "Betina",
-                    style: TextStyle(
-                      fontFamily: "BrushScriptMT",
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 230, 211, 164),
-                    ),
-                  ),
-                )
-              : const SizedBox.shrink(),
-          scrollValue > size.height - 20
-              ? Positioned(
-                  bottom: 384,
-                  child: AnimatedOpacity(
-                    duration: const Duration(milliseconds: 500),
-                    opacity: scrollValue > size.height - 1 ? 1 : 0,
-                    child: const Text(
-                      "&",
-                      style: TextStyle(
-                        fontFamily: "BrushScriptMT",
-                        fontSize: 56,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 230, 211, 164),
-                      ),
-                    ),
-                  ),
-                )
-              : const SizedBox.shrink(),
-          scrollValue > size.height - 70
-              ? AnimatedPositioned(
-                  duration: const Duration(milliseconds: 300),
-                  bottom: 344,
-                  left: scrollValue > size.height - 50 ? 140 : 40,
-                  child: const Text(
-                    "Jantan",
-                    style: TextStyle(
-                      fontFamily: "BrushScriptMT",
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 230, 211, 164),
-                    ),
-                  ),
-                )
-              : const SizedBox.shrink(),
-          scrollValue > size.height - 70
-              ? AnimatedPositioned(
-                  duration: const Duration(milliseconds: 300),
-                  bottom: scrollValue > size.height - 50 ? 120 : 50,
-                  child: AnimatedOpacity(
-                    duration: const Duration(milliseconds: 500),
-                    opacity: scrollValue > size.height - 50 ? 1 : 0.1,
-                    child: Text(
-                      dateFormater.format(_dateTime),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                )
-              : const SizedBox.shrink(),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 500),
+            bottom: 444,
+            right: scrollValue > size.height - 50 ? 140 : 40,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 500),
+              opacity: scrollValue > size.height - 50 ? 1 : 0,
+              child: const Text(
+                "Betina",
+                style: TextStyle(
+                  fontFamily: "BrushScriptMT",
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 230, 211, 164),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 384,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 500),
+              opacity: scrollValue > size.height - 1 ? 1 : 0,
+              child: const Text(
+                "&",
+                style: TextStyle(
+                  fontFamily: "BrushScriptMT",
+                  fontSize: 56,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 230, 211, 164),
+                ),
+              ),
+            ),
+          ),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 500),
+            bottom: 344,
+            left: scrollValue > size.height - 50 ? 140 : 40,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 500),
+              opacity: scrollValue > size.height - 50 ? 1 : 0,
+              child: const Text(
+                "Jantan",
+                style: TextStyle(
+                  fontFamily: "BrushScriptMT",
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 230, 211, 164),
+                ),
+              ),
+            ),
+          ),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 500),
+            bottom: scrollValue > size.height - 50 ? 120 : 50,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 500),
+              opacity: scrollValue > size.height - 50 ? 1 : 0,
+              child: Text(
+                dateFormater.format(_dateTime),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
