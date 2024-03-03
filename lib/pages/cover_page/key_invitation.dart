@@ -24,7 +24,7 @@ class KeyInvitation extends StatelessWidget {
               gradient: const LinearGradient(
                 colors: [
                   Color.fromARGB(180, 255, 212, 102),
-                  Color.fromARGB(180, 255, 176, 176),
+                  Color.fromARGB(240, 255, 198, 192),
                 ],
               ),
             ),

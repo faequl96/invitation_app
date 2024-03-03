@@ -55,6 +55,17 @@ class _CountDownState extends State<CountDown> {
     }
   }
 
+  Color getFrameColor() {
+    switch (widget.unitTimeType) {
+      case UnitTimeType.Day:
+      case UnitTimeType.Minute:
+        return const Color.fromARGB(255, 230, 211, 164);
+      case UnitTimeType.Hour:
+      case UnitTimeType.Second:
+        return const Color.fromARGB(240, 255, 204, 192);
+    }
+  }
+
   @override
   void initState() {
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
@@ -74,11 +85,11 @@ class _CountDownState extends State<CountDown> {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: 60,
+      height: (size.width - 180) / 4,
       width: (size.width - 180) / 4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: const Color.fromARGB(255, 230, 211, 164),
+        color: getFrameColor(),
       ),
       child: Container(
         margin: const EdgeInsets.all(4),
@@ -91,9 +102,13 @@ class _CountDownState extends State<CountDown> {
           children: [
             Text(
               getUnitTimeValue(),
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                height: 1.2,
+              ),
             ),
-            Text(getUnitTime()),
+            Text(getUnitTime(), style: const TextStyle(height: 1.2)),
           ],
         ),
       ),

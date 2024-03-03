@@ -63,7 +63,7 @@ class _SwipeUpState extends State<SwipeUp> {
                       quarterTurns: 270 ~/ 6,
                       child: Icon(
                         Icons.arrow_back_ios_rounded,
-                        color: Color.fromARGB(220, 255, 210, 210),
+                        color: Color.fromARGB(240, 255, 198, 192),
                         size: 32,
                       ),
                     ),

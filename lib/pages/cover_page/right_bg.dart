@@ -59,7 +59,40 @@ class RightBackground extends StatelessWidget {
                               topRight: Radius.circular(14),
                               bottomRight: Radius.circular(14),
                             ),
-                            color: Color.fromARGB(255, 230, 211, 164),
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomRight,
+                              end: Alignment.topLeft,
+                              colors: [
+                                Color.fromARGB(255, 244, 230, 194),
+                                Color.fromARGB(255, 230, 211, 164),
+                              ],
+                              stops: [0.3, 0.5],
+                            ),
+                          ),
+                        ),
+                      ),
+                isTransparent == true
+                    ? const SizedBox.shrink()
+                    : Positioned(
+                        left: 0,
+                        bottom: 100,
+                        child: Container(
+                          height: 130,
+                          width: size.width / 2 - 40,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(14),
+                              bottomRight: Radius.circular(14),
+                            ),
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomRight,
+                              end: Alignment.topLeft,
+                              colors: [
+                                Color.fromARGB(160, 255, 198, 192),
+                                Color.fromARGB(160, 230, 211, 164),
+                              ],
+                              stops: [0.3, 0.5],
+                            ),
                           ),
                           child: Container(
                             margin: const EdgeInsets.only(

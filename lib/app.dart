@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invitation_app/enum/enums.dart';
+import 'package:invitation_app/methods/methods.dart';
 import 'package:invitation_app/models/date_countdown_scroll_value.dart';
 import 'package:invitation_app/pages/cover_page/countdown.dart';
 import 'package:invitation_app/pages/cover_page/key_invitation.dart';
@@ -39,6 +40,7 @@ class _AppState extends State<App> {
   bool isOpenCompleted = false;
 
   String _toName = "";
+  String _instance = "";
 
   @override
   void initState() {
@@ -49,6 +51,8 @@ class _AppState extends State<App> {
     _pageController.addListener(_scrollListener);
 
     _toName = Uri.base.queryParameters["to"] ?? "";
+    _instance = Uri.base.queryParameters["instance"] ?? "";
+
     super.initState();
   }
 
@@ -215,21 +219,40 @@ class _AppState extends State<App> {
             ),
             if (scrollValue == 0)
               Positioned(
-                bottom: 164,
-                child: SizedBox(
-                  width: size.width,
-                  height: 60,
-                  child: Center(
-                    child: Text(
-                      "to : $_toName",
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                bottom: 172,
+                child: Text(
+                  "To : ${toCapitalize(_toName)}",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
+            if (scrollValue == 0)
+              if (_instance.isNotEmpty)
+                Positioned(
+                  bottom: 130,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset("$_instance.png", height: 30),
+                      const SizedBox(width: 10),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            toCapitalize(_instance),
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
             Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
