@@ -26,3 +26,8 @@ flutter:
     - family: BrushScriptMT
       fonts:
         - asset: fonts/Brush-Script-MT-Regular.ttf
+    - family: Upakarti
+      fonts:
+        - asset: fonts/Upakarti-Regular.ttf
+        - asset: fonts/Upakarti-Italic.ttf
+          style: italic

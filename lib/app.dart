@@ -123,37 +123,111 @@ class _AppState extends State<App> {
             //     ),
             //   ),
             // ),
+            // Positioned(
+            //   bottom: 626 + (scrollValue / 14),
+            //   left: 54,
+            //   child: Opacity(
+            //     opacity: flashValue,
+            //     child: const Text(
+            //       "Undangan",
+            //       style: TextStyle(
+            //         fontFamily: "BrushScriptMT",
+            //         fontSize: 64,
+            //         fontWeight: FontWeight.bold,
+            //         color: Color.fromARGB(255, 230, 211, 164),
+            //         height: 1.2,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // Positioned(
+            //   bottom: 572 + (scrollValue / 14),
+            //   right: 54,
+            //   child: Opacity(
+            //     opacity: flashValue,
+            //     child: const Text(
+            //       "Pernikahan",
+            //       style: TextStyle(
+            //         fontFamily: "BrushScriptMT",
+            //         fontSize: 64,
+            //         fontWeight: FontWeight.bold,
+            //         color: Color.fromARGB(255, 230, 211, 164),
+            //         height: 1.2,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Positioned(
-              bottom: 626 + (scrollValue / 14),
-              left: 54,
+              bottom: 616 + (scrollValue / 14),
+              left: 50,
               child: Opacity(
                 opacity: flashValue,
-                child: const Text(
-                  "Undangan",
-                  style: TextStyle(
-                    fontFamily: "BrushScriptMT",
-                    fontSize: 64,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 230, 211, 164),
-                    height: 1.2,
-                  ),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "U",
+                      style: TextStyle(
+                        fontFamily: "Upakarti",
+                        fontSize: 64,
+                        color: Color.fromARGB(255, 230, 211, 164),
+                        height: 1.2,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "ndangan",
+                          style: TextStyle(
+                            fontFamily: "Upakarti",
+                            fontSize: 48,
+                            color: Color.fromARGB(255, 230, 211, 164),
+                            height: 1.2,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                        SizedBox(height: 5.4),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
             Positioned(
               bottom: 572 + (scrollValue / 14),
-              right: 54,
+              right: 50,
               child: Opacity(
                 opacity: flashValue,
-                child: const Text(
-                  "Pernikahan",
-                  style: TextStyle(
-                    fontFamily: "BrushScriptMT",
-                    fontSize: 64,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 230, 211, 164),
-                    height: 1.2,
-                  ),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "P",
+                      style: TextStyle(
+                        fontFamily: "Upakarti",
+                        fontSize: 60,
+                        color: Color.fromARGB(255, 230, 211, 164),
+                        height: 1.2,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(height: 19.4),
+                        Text(
+                          "ernikahan",
+                          style: TextStyle(
+                            fontFamily: "Upakarti",
+                            fontSize: 48,
+                            color: Color.fromARGB(255, 230, 211, 164),
+                            height: 1.2,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
