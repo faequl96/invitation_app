@@ -40,7 +40,7 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const SizedBox.shrink()
                     : const Positioned(
-                        left: 0,
+                        left: -0.2,
                         child: Image(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/landing_bg_right.png"),
@@ -49,7 +49,7 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const SizedBox.shrink()
                     : Positioned(
-                        left: 0,
+                        left: -0.2,
                         bottom: 100,
                         child: Container(
                           height: 130,
@@ -74,7 +74,7 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const SizedBox.shrink()
                     : Positioned(
-                        left: 0,
+                        left: -0.2,
                         bottom: 100,
                         child: Container(
                           height: 130,

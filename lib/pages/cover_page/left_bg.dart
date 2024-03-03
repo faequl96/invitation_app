@@ -36,14 +36,14 @@ class LeftBackground extends StatelessWidget {
               ]
             : [
                 const Positioned(
-                  right: -0.1,
+                  right: -0.2,
                   child: Image(
                     fit: BoxFit.cover,
                     image: AssetImage("assets/landing_bg_left.png"),
                   ),
                 ),
                 Positioned(
-                  right: -1,
+                  right: -0.2,
                   bottom: 100,
                   child: Container(
                     height: 130,
@@ -66,7 +66,7 @@ class LeftBackground extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: -1,
+                  right: -0.2,
                   bottom: 100,
                   child: Container(
                     height: 130,
