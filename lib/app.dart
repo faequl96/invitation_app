@@ -124,15 +124,15 @@ class _AppState extends State<App> {
             //   ),
             // ),
             Positioned(
-              bottom: 650 + (scrollValue / 14),
+              bottom: 654 + (scrollValue / 14),
               left: 54,
               child: Opacity(
                 opacity: flashValue,
                 child: const Text(
-                  "Wedding",
+                  "Undangan",
                   style: TextStyle(
                     fontFamily: "BrushScriptMT",
-                    fontSize: 66,
+                    fontSize: 64,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 230, 211, 164),
                     height: 1.2,
@@ -146,10 +146,10 @@ class _AppState extends State<App> {
               child: Opacity(
                 opacity: flashValue,
                 child: const Text(
-                  "Invitation",
+                  "Pernikahan",
                   style: TextStyle(
                     fontFamily: "BrushScriptMT",
-                    fontSize: 66,
+                    fontSize: 64,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 230, 211, 164),
                     height: 1.2,
@@ -218,16 +218,22 @@ class _AppState extends State<App> {
               child: const CountDown(unitTimeType: UnitTimeType.Day),
             ),
             if (scrollValue == 0)
-              Positioned(
-                bottom: 172,
-                child: Text(
-                  "To : ${toCapitalize(_toName)}",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+              if (_toName.isNotEmpty)
+                Positioned(
+                  bottom: 172,
+                  child: Row(
+                    children: [
+                      const Text("Buat : ", style: TextStyle(fontSize: 20)),
+                      Text(
+                        toCapitalize(_toName),
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
             if (scrollValue == 0)
               if (_instance.isNotEmpty)
                 Positioned(
