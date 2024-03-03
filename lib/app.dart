@@ -158,8 +158,8 @@ class _AppState extends State<App> {
             //   ),
             // ),
             Positioned(
-              bottom: 616 + (scrollValue / 14),
-              left: 50,
+              top: 32 - (scrollValue / 14),
+              left: 60,
               child: Opacity(
                 opacity: flashValue,
                 child: const Row(
@@ -184,10 +184,10 @@ class _AppState extends State<App> {
                             fontSize: 48,
                             color: Color.fromARGB(255, 230, 211, 164),
                             height: 1.2,
-                            letterSpacing: 2,
+                            letterSpacing: 1,
                           ),
                         ),
-                        SizedBox(height: 5.4),
+                        SizedBox(height: 5),
                       ],
                     ),
                   ],
@@ -195,8 +195,8 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              bottom: 572 + (scrollValue / 14),
-              right: 50,
+              top: 78 - (scrollValue / 14),
+              right: 60,
               child: Opacity(
                 opacity: flashValue,
                 child: const Row(
@@ -206,15 +206,15 @@ class _AppState extends State<App> {
                       "P",
                       style: TextStyle(
                         fontFamily: "Upakarti",
-                        fontSize: 60,
+                        fontSize: 56,
                         color: Color.fromARGB(255, 230, 211, 164),
                         height: 1.2,
-                        letterSpacing: 2,
+                        letterSpacing: 1,
                       ),
                     ),
                     Column(
                       children: [
-                        SizedBox(height: 19.4),
+                        SizedBox(height: 16),
                         Text(
                           "ernikahan",
                           style: TextStyle(
@@ -222,7 +222,7 @@ class _AppState extends State<App> {
                             fontSize: 48,
                             color: Color.fromARGB(255, 230, 211, 164),
                             height: 1.2,
-                            letterSpacing: 2,
+                            letterSpacing: 1,
                           ),
                         ),
                       ],
