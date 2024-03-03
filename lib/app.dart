@@ -245,7 +245,7 @@ class _AppState extends State<App> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage("$_instance.png"),
+                        image: AssetImage("assets/$_instance.png"),
                         height: 30,
                         fit: BoxFit.fitHeight,
                       ),
