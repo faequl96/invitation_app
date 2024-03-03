@@ -241,7 +241,11 @@ class _AppState extends State<App> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset("$_instance.png", height: 30),
+                      Image(
+                        image: AssetImage("$_instance.png"),
+                        height: 30,
+                        fit: BoxFit.fitHeight,
+                      ),
                       const SizedBox(width: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
