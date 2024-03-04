@@ -26,8 +26,31 @@ class Page1 extends StatelessWidget {
       child: Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: [
+          const Positioned(
+            top: 32,
+            child: Text(
+              "Pernikahan",
+              style: TextStyle(
+                fontFamily: "BrushScriptMT",
+                fontSize: 70,
+                fontWeight: FontWeight.w600,
+                color: Color.fromARGB(255, 230, 211, 164),
+              ),
+            ),
+          ),
+          const Positioned(
+            top: 96,
+            child: Text(
+              "Dari",
+              style: TextStyle(
+                fontFamily: "BrushScriptMT",
+                fontSize: 40,
+                color: Colors.white,
+              ),
+            ),
+          ),
           Positioned(
-            bottom: 250,
+            bottom: 240,
             child: Container(
               width: size.width - 60,
               height: size.width - 60,
@@ -42,7 +65,7 @@ class Page1 extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
-            bottom: 444,
+            bottom: 434,
             right: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
@@ -59,7 +82,7 @@ class Page1 extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 384,
+            bottom: 374,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 1 ? 1 : 0,
@@ -76,7 +99,7 @@ class Page1 extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
-            bottom: 344,
+            bottom: 334,
             left: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
