@@ -49,7 +49,7 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const SizedBox.shrink()
                     : Positioned(
-                        left: -0.2,
+                        left: -0.3,
                         bottom: 100,
                         child: Container(
                           height: 130,
@@ -74,7 +74,7 @@ class RightBackground extends StatelessWidget {
                 isTransparent == true
                     ? const SizedBox.shrink()
                     : Positioned(
-                        left: -0.2,
+                        left: -0.3,
                         bottom: 100,
                         child: Container(
                           height: 130,

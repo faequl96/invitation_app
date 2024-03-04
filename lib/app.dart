@@ -8,7 +8,9 @@ import 'package:invitation_app/pages/cover_page/right_bg.dart';
 import 'package:invitation_app/pages/cover_page/left_bg.dart';
 import 'package:invitation_app/pages/cover_page/seal_invitation.dart';
 import 'package:invitation_app/pages/cover_page/swipe_up.dart';
+import 'package:invitation_app/pages/cover_page/title_invitation.dart';
 import 'package:invitation_app/pages/page_1/page_1.dart';
+import 'package:invitation_app/pages/page_2/page_2.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -106,129 +108,17 @@ class _AppState extends State<App> {
               right: -moveValue,
               child: const RightBackground(isTransparent: true),
             ),
-            // Positioned(
-            //   bottom: 600 + (scrollValue / 14),
-            //   child: Opacity(
-            //     opacity: flashValue,
-            //     child: const Text(
-            //       "WEDDING\nINVITATION",
-            //       textAlign: TextAlign.center,
-            //       style: TextStyle(
-            //         fontSize: 38,
-            //         fontWeight: FontWeight.w800,
-            //         color: Color.fromARGB(255, 230, 211, 164),
-            //         height: 1.2,
-            //         letterSpacing: 6,
-            //       ),
-            //     ),
-            //   ),
-            // ),
-            // Positioned(
-            //   bottom: 626 + (scrollValue / 14),
-            //   left: 54,
-            //   child: Opacity(
-            //     opacity: flashValue,
-            //     child: const Text(
-            //       "Undangan",
-            //       style: TextStyle(
-            //         fontFamily: "BrushScriptMT",
-            //         fontSize: 64,
-            //         fontWeight: FontWeight.bold,
-            //         color: Color.fromARGB(255, 230, 211, 164),
-            //         height: 1.2,
-            //       ),
-            //     ),
-            //   ),
-            // ),
-            // Positioned(
-            //   bottom: 572 + (scrollValue / 14),
-            //   right: 54,
-            //   child: Opacity(
-            //     opacity: flashValue,
-            //     child: const Text(
-            //       "Pernikahan",
-            //       style: TextStyle(
-            //         fontFamily: "BrushScriptMT",
-            //         fontSize: 64,
-            //         fontWeight: FontWeight.bold,
-            //         color: Color.fromARGB(255, 230, 211, 164),
-            //         height: 1.2,
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Positioned(
               top: 32 - (scrollValue / 14),
-              left: 60,
-              child: Opacity(
-                opacity: flashValue,
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "U",
-                      style: TextStyle(
-                        fontFamily: "Upakarti",
-                        fontSize: 64,
-                        color: Color.fromARGB(255, 230, 211, 164),
-                        height: 1.2,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          "ndangan",
-                          style: TextStyle(
-                            fontFamily: "Upakarti",
-                            fontSize: 48,
-                            color: Color.fromARGB(255, 230, 211, 164),
-                            height: 1.2,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              left: 54,
+              child: TitleInvitation(flashValue: flashValue),
             ),
             Positioned(
-              top: 78 - (scrollValue / 14),
+              top: 76 - (scrollValue / 14),
               right: 60,
-              child: Opacity(
-                opacity: flashValue,
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "P",
-                      style: TextStyle(
-                        fontFamily: "Upakarti",
-                        fontSize: 56,
-                        color: Color.fromARGB(255, 230, 211, 164),
-                        height: 1.2,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        SizedBox(height: 16),
-                        Text(
-                          "ernikahan",
-                          style: TextStyle(
-                            fontFamily: "Upakarti",
-                            fontSize: 48,
-                            color: Color.fromARGB(255, 230, 211, 164),
-                            height: 1.2,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+              child: TitleInvitation(
+                isBottomTitle: true,
+                flashValue: flashValue,
               ),
             ),
             Positioned(
@@ -348,18 +238,10 @@ class _AppState extends State<App> {
                     controller: _pageController,
                     scrollDirection: Axis.vertical,
                     children: [
-                      SizedBox(
-                        height: size.height,
-                        width: double.maxFinite,
-                      ),
-                      SizedBox(
-                        height: size.height,
-                        width: double.maxFinite,
-                      ),
-                      SizedBox(
-                        height: size.height,
-                        width: double.maxFinite,
-                      ),
+                      SizedBox(height: size.height, width: double.maxFinite),
+                      SizedBox(height: size.height, width: double.maxFinite),
+                      const Page2(),
+                      SizedBox(height: size.height, width: double.maxFinite),
                     ],
                   ),
                 ),
