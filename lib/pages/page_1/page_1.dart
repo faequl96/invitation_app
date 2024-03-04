@@ -50,7 +50,7 @@ class Page1 extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 240,
+            bottom: 200,
             child: Container(
               width: size.width - 60,
               height: size.width - 60,
@@ -65,7 +65,7 @@ class Page1 extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
-            bottom: 434,
+            bottom: 394,
             right: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
@@ -82,7 +82,7 @@ class Page1 extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 374,
+            bottom: 334,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 1 ? 1 : 0,
@@ -99,7 +99,7 @@ class Page1 extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
-            bottom: 334,
+            bottom: 294,
             left: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
