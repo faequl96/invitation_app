@@ -22,6 +22,7 @@ class TitleInvitation extends StatelessWidget {
                   "P",
                   style: TextStyle(
                     fontFamily: "Upakarti",
+                    fontStyle: FontStyle.italic,
                     fontSize: 56,
                     color: Color.fromARGB(255, 230, 211, 164),
                     height: 1.2,
@@ -35,6 +36,7 @@ class TitleInvitation extends StatelessWidget {
                       "ernikahan",
                       style: TextStyle(
                         fontFamily: "Upakarti",
+                        fontStyle: FontStyle.italic,
                         fontSize: 48,
                         color: Color.fromARGB(255, 230, 211, 164),
                         height: 1.2,
@@ -55,6 +57,7 @@ class TitleInvitation extends StatelessWidget {
                   "U",
                   style: TextStyle(
                     fontFamily: "Upakarti",
+                    fontStyle: FontStyle.italic,
                     fontSize: 64,
                     color: Color.fromARGB(255, 230, 211, 164),
                     height: 1.2,
@@ -67,6 +70,7 @@ class TitleInvitation extends StatelessWidget {
                       "ndangan",
                       style: TextStyle(
                         fontFamily: "Upakarti",
+                        fontStyle: FontStyle.italic,
                         fontSize: 48,
                         color: Color.fromARGB(255, 230, 211, 164),
                         height: 1.2,
