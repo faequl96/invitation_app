@@ -208,21 +208,21 @@ class _AppState extends State<App> {
                     children: [
                       Image(
                         image: AssetImage("assets/$_instance.png"),
-                        height: 30,
+                        height: 26,
                         fit: BoxFit.fitHeight,
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             toCapitalize(_instance),
                             style: const TextStyle(
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          const SizedBox(height: 6),
+                          const SizedBox(height: 4),
                         ],
                       ),
                     ],
