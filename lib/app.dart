@@ -257,7 +257,7 @@ class _AppState extends State<App> {
             if (scrollValue == 0)
               if (_toName.isNotEmpty)
                 Positioned(
-                  bottom: h(hType, 146, 154, 162, 170),
+                  bottom: h(hType, 136, 146, 156, 166),
                   child: Text(
                     toCapitalize(_toName),
                     style: TextStyle(

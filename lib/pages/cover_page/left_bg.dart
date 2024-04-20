@@ -34,6 +34,7 @@ class LeftBackground extends StatelessWidget {
             right: -0.2,
             child: Image(
               fit: BoxFit.cover,
+              height: size.height,
               width: size.width / 2,
               image: const AssetImage("assets/landing_bg_left.png"),
             ),
@@ -103,9 +104,7 @@ class LeftBackground extends StatelessWidget {
                   child: Image(
                     width: h(hType, 116, 122, 128, 134),
                     fit: BoxFit.cover,
-                    image: const AssetImage(
-                      "assets/kelir_jawa_rose_gold.png",
-                    ),
+                    image: const AssetImage("assets/kelir_jawa_rose_gold.png"),
                   ),
                 )
               : const SizedBox.shrink(),

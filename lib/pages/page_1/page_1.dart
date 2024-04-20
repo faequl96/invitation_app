@@ -74,26 +74,26 @@ class Page1 extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
-            bottom: 390,
+            bottom: w(wType, 374, 384, 390, 392),
             right: scrollValue > size.height - 50
                 ? w(wType, 110, 120, 130, 140)
                 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
-              child: const Text(
+              child: Text(
                 "Rahma",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
-                  fontSize: 50,
+                  fontSize: w(wType, 46, 48, 50, 52),
                   fontWeight: FontWeight.w600,
-                  color: Color.fromARGB(255, 230, 211, 164),
+                  color: const Color.fromARGB(255, 230, 211, 164),
                 ),
               ),
             ),
           ),
           Positioned(
-            bottom: 330,
+            bottom: w(wType, 314, 324, 330, 332),
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 1 ? 1 : 0,
@@ -110,20 +110,20 @@ class Page1 extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
-            bottom: 290,
+            bottom: w(wType, 274, 284, 290, 292),
             left: scrollValue > size.height - 50
                 ? w(wType, 130, 140, 150, 160)
                 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
-              child: const Text(
+              child: Text(
                 "Faiq",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
-                  fontSize: 50,
+                  fontSize: w(wType, 46, 48, 50, 52),
                   fontWeight: FontWeight.w600,
-                  color: Color.fromARGB(255, 230, 211, 164),
+                  color: const Color.fromARGB(255, 230, 211, 164),
                 ),
               ),
             ),

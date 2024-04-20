@@ -40,6 +40,7 @@ class RightBackground extends StatelessWidget {
                   left: -0.2,
                   child: Image(
                     fit: BoxFit.cover,
+                    height: size.height,
                     width: size.width / 2,
                     image: const AssetImage("assets/landing_bg_right.png"),
                   ),
