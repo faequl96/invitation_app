@@ -4,6 +4,7 @@ import 'package:invitation_app/methods/methods.dart';
 import 'package:invitation_app/models/date_countdown_scroll_value.dart';
 import 'package:invitation_app/pages/cover_page/countdown.dart';
 import 'package:invitation_app/pages/cover_page/key_invitation.dart';
+import 'package:invitation_app/pages/cover_page/light_effect.dart';
 import 'package:invitation_app/pages/cover_page/right_bg.dart';
 import 'package:invitation_app/pages/cover_page/left_bg.dart';
 import 'package:invitation_app/pages/cover_page/seal_invitation.dart';
@@ -109,24 +110,18 @@ class _AppState extends State<App> {
                 ? const SizedBox.shrink()
                 : Positioned(
                     right: -moveValue,
-                    child: RightBackground(
-                      hType: hType,
-                      wType: wType,
-                      backgroundType: BackgroundType.Cover,
-                      isLightEffect: true,
+                    child: LightEffect(
                       opacityValue: opacityValue,
+                      isRight: true,
                     ),
                   ),
             scrollValue > size.height + 110
                 ? const SizedBox.shrink()
                 : Positioned(
                     left: -moveValue,
-                    child: LeftBackground(
-                      hType: hType,
-                      wType: wType,
-                      backgroundType: BackgroundType.Cover,
-                      isLightEffect: true,
+                    child: LightEffect(
                       opacityValue: opacityValue,
+                      isRight: false,
                     ),
                   ),
             scrollValue > size.height + 110
