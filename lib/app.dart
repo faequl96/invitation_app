@@ -94,7 +94,11 @@ class _AppState extends State<App> {
         body: Stack(
           alignment: AlignmentDirectional.bottomCenter,
           children: [
-            if (scrollValue <= size.height * 2) Page1(scrollValue: scrollValue),
+            if (scrollValue <= size.height * 2)
+              Page1(
+                scrollValue: scrollValue,
+                hType: hType,
+              ),
             Container(
               height: size.height,
               width: size.width,
@@ -162,7 +166,7 @@ class _AppState extends State<App> {
                     ),
                   ),
             Positioned(
-              top: 32 - (scrollValue / 14),
+              top: h(hType, 12, 28, 44, 60) - (scrollValue / 14),
               left: w(wType, 45, 48, 51, 54),
               child: TitleInvitation(
                 wType: wType,
@@ -170,7 +174,7 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              top: 76 - (scrollValue / 14),
+              top: h(hType, 56, 72, 88, 104) - (scrollValue / 14),
               right: w(wType, 45, 48, 51, 54),
               child: TitleInvitation(
                 wType: wType,
@@ -257,7 +261,7 @@ class _AppState extends State<App> {
             if (scrollValue == 0)
               if (_toName.isNotEmpty)
                 Positioned(
-                  bottom: 170,
+                  bottom: h(hType, 146, 154, 162, 170),
                   child: Text(
                     toCapitalize(_toName),
                     style: TextStyle(
@@ -269,7 +273,7 @@ class _AppState extends State<App> {
             if (scrollValue == 0)
               if (_instance.isNotEmpty)
                 Positioned(
-                  bottom: 132,
+                  bottom: h(hType, 108, 116, 124, 132),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

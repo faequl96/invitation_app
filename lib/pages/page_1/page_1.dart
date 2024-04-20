@@ -1,10 +1,13 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:invitation_app/enum/enums.dart';
+import 'package:invitation_app/methods/methods.dart';
 
 class Page1 extends StatelessWidget {
-  Page1({super.key, required this.scrollValue});
+  Page1({super.key, required this.scrollValue, required this.hType});
 
   final double scrollValue;
+  final H hType;
 
   final DateTime _dateTime = DateTime(2024, 8, 10, 9);
 
@@ -26,9 +29,9 @@ class Page1 extends StatelessWidget {
       child: Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: [
-          const Positioned(
-            top: 32,
-            child: Text(
+          Positioned(
+            top: h(hType, 22, 38, 54, 70),
+            child: const Text(
               "Pernikahan",
               style: TextStyle(
                 fontFamily: "BrushScriptMT",
@@ -38,9 +41,9 @@ class Page1 extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
-            top: 96,
-            child: Text(
+          Positioned(
+            top: h(hType, 86, 102, 118, 134),
+            child: const Text(
               "Dari",
               style: TextStyle(
                 fontFamily: "BrushScriptMT",
@@ -66,7 +69,7 @@ class Page1 extends StatelessWidget {
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
             bottom: 394,
-            right: scrollValue > size.height - 50 ? 120 : 40,
+            right: scrollValue > size.height - 50 ? 130 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
@@ -100,7 +103,7 @@ class Page1 extends StatelessWidget {
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
             bottom: 294,
-            left: scrollValue > size.height - 50 ? 150 : 40,
+            left: scrollValue > size.height - 50 ? 140 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
