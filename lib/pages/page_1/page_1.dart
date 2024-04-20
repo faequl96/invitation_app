@@ -6,7 +6,7 @@ class Page1 extends StatelessWidget {
 
   final double scrollValue;
 
-  final DateTime _dateTime = DateTime(2024, 3, 10, 9);
+  final DateTime _dateTime = DateTime(2024, 8, 10, 9);
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +66,12 @@ class Page1 extends StatelessWidget {
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
             bottom: 394,
-            right: scrollValue > size.height - 50 ? 140 : 40,
+            right: scrollValue > size.height - 50 ? 120 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
               child: const Text(
-                "Betina",
+                "Rahma",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
                   fontSize: 50,
@@ -100,12 +100,12 @@ class Page1 extends StatelessWidget {
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
             bottom: 294,
-            left: scrollValue > size.height - 50 ? 140 : 40,
+            left: scrollValue > size.height - 50 ? 150 : 40,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: scrollValue > size.height - 50 ? 1 : 0,
               child: const Text(
-                "Jantan",
+                "Faiq",
                 style: TextStyle(
                   fontFamily: "BrushScriptMT",
                   fontSize: 50,

@@ -2,10 +2,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:invitation_app/enum/enums.dart';
+import 'package:invitation_app/methods/methods.dart';
 
 class CountDown extends StatefulWidget {
-  const CountDown({super.key, required this.unitTimeType});
+  const CountDown({
+    super.key,
+    required this.hType,
+    required this.wType,
+    required this.unitTimeType,
+  });
 
+  final H hType;
+  final W wType;
   final UnitTimeType unitTimeType;
 
   @override
@@ -15,7 +23,7 @@ class CountDown extends StatefulWidget {
 class _CountDownState extends State<CountDown> {
   late Timer _timer;
 
-  final DateTime dateTime = DateTime(2024, 3, 10, 9);
+  final DateTime dateTime = DateTime(2024, 8, 10, 9);
 
   String day = "";
   String hour = "";
@@ -102,13 +110,19 @@ class _CountDownState extends State<CountDown> {
           children: [
             Text(
               getUnitTimeValue(),
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: w(widget.wType, 12, 13, 14, 15),
                 height: 1.2,
               ),
             ),
-            Text(getUnitTime(), style: const TextStyle(height: 1.2)),
+            Text(
+              getUnitTime(),
+              style: TextStyle(
+                fontSize: w(widget.wType, 9, 10, 11, 12),
+                height: 1,
+              ),
+            ),
           ],
         ),
       ),

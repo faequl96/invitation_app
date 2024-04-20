@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:invitation_app/enum/enums.dart';
+import 'package:invitation_app/methods/methods.dart';
 
 class TitleInvitation extends StatelessWidget {
   const TitleInvitation({
     super.key,
+    required this.wType,
     this.isBottomTitle,
     required this.flashValue,
   });
 
+  final W wType;
   final bool? isBottomTitle;
   final double flashValue;
 
@@ -15,7 +19,7 @@ class TitleInvitation extends StatelessWidget {
     return isBottomTitle == true
         ? Opacity(
             opacity: flashValue,
-            child: const Row(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -23,22 +27,22 @@ class TitleInvitation extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: "Upakarti",
                     fontStyle: FontStyle.italic,
-                    fontSize: 56,
-                    color: Color.fromARGB(255, 230, 211, 164),
+                    fontSize: w(wType, 51, 56, 61, 66),
+                    color: const Color.fromARGB(255, 230, 211, 164),
                     height: 1.2,
                     letterSpacing: 1,
                   ),
                 ),
                 Column(
                   children: [
-                    SizedBox(height: 16),
+                    SizedBox(height: w(wType, 16.2, 16.8, 17.4, 18)),
                     Text(
                       "ernikahan",
                       style: TextStyle(
                         fontFamily: "Upakarti",
                         fontStyle: FontStyle.italic,
-                        fontSize: 48,
-                        color: Color.fromARGB(255, 230, 211, 164),
+                        fontSize: w(wType, 41, 46, 51, 56),
+                        color: const Color.fromARGB(255, 230, 211, 164),
                         height: 1.2,
                         letterSpacing: 1,
                       ),
@@ -50,7 +54,7 @@ class TitleInvitation extends StatelessWidget {
           )
         : Opacity(
             opacity: flashValue,
-            child: const Row(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
@@ -58,8 +62,8 @@ class TitleInvitation extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: "Upakarti",
                     fontStyle: FontStyle.italic,
-                    fontSize: 64,
-                    color: Color.fromARGB(255, 230, 211, 164),
+                    fontSize: w(wType, 61, 66, 71, 76),
+                    color: const Color.fromARGB(255, 230, 211, 164),
                     height: 1.2,
                     letterSpacing: 1,
                   ),
@@ -71,13 +75,13 @@ class TitleInvitation extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: "Upakarti",
                         fontStyle: FontStyle.italic,
-                        fontSize: 48,
-                        color: Color.fromARGB(255, 230, 211, 164),
+                        fontSize: w(wType, 41, 46, 51, 56),
+                        color: const Color.fromARGB(255, 230, 211, 164),
                         height: 1.2,
                         letterSpacing: 1,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: w(wType, 6, 6.6, 7.2, 7.8)),
                   ],
                 ),
               ],
