@@ -98,6 +98,7 @@ class _AppState extends State<App> {
               Page1(
                 scrollValue: scrollValue,
                 hType: hType,
+                wType: wType,
               ),
             Container(
               height: size.height,
@@ -166,7 +167,7 @@ class _AppState extends State<App> {
                     ),
                   ),
             Positioned(
-              top: h(hType, 12, 28, 44, 60) - (scrollValue / 14),
+              top: h(hType, 6, 12, 30, 60) - (scrollValue / 14),
               left: w(wType, 45, 48, 51, 54),
               child: TitleInvitation(
                 wType: wType,
@@ -174,7 +175,7 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              top: h(hType, 56, 72, 88, 104) - (scrollValue / 14),
+              top: h(hType, 50, 56, 74, 104) - (scrollValue / 14),
               right: w(wType, 45, 48, 51, 54),
               child: TitleInvitation(
                 wType: wType,
