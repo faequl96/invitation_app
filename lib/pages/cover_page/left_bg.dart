@@ -10,7 +10,6 @@ class LeftBackground extends StatelessWidget {
     required this.backgroundType,
     this.moveValue = 0,
     this.flashValue = 0,
-    this.opacityValue = 0,
   });
 
   final H hType;
@@ -18,7 +17,6 @@ class LeftBackground extends StatelessWidget {
   final BackgroundType backgroundType;
   final double moveValue;
   final double flashValue;
-  final double opacityValue;
 
   @override
   Widget build(BuildContext context) {

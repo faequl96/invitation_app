@@ -12,7 +12,6 @@ class RightBackground extends StatelessWidget {
     this.isTransparent,
     this.moveValue = 0,
     this.flashValue = 0,
-    this.opacityValue = 0,
   });
 
   final H hType;
@@ -22,7 +21,6 @@ class RightBackground extends StatelessWidget {
   final bool? isTransparent;
   final double moveValue;
   final double flashValue;
-  final double opacityValue;
 
   @override
   Widget build(BuildContext context) {

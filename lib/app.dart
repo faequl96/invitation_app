@@ -95,7 +95,7 @@ class _AppState extends State<App> {
         body: Stack(
           alignment: AlignmentDirectional.bottomCenter,
           children: [
-            if (scrollValue <= size.height * 2)
+            if (scrollValue < size.height * 2)
               Page1(
                 scrollValue: scrollValue,
                 hType: hType,
@@ -134,7 +134,6 @@ class _AppState extends State<App> {
                       backgroundType: BackgroundType.Cover,
                       moveValue: moveValue,
                       flashValue: flashValue,
-                      opacityValue: opacityValue,
                     ),
                   ),
             scrollValue > size.height + 110
@@ -147,7 +146,6 @@ class _AppState extends State<App> {
                       backgroundType: BackgroundType.Cover,
                       moveValue: moveValue,
                       flashValue: flashValue,
-                      opacityValue: opacityValue,
                     ),
                   ),
             scrollValue > size.height + 110
@@ -374,7 +372,7 @@ class _AppState extends State<App> {
     final double dividedSize = size.height / size.width;
 
     scrollValue = _pageController.offset.ceil().toDouble();
-    double sV = scrollValue;
+    final double sV = scrollValue;
     moveValue = (_pageController.offset / dividedSize) / 2;
 
     if (sV > 0 && sV <= size.height / 3) {
@@ -386,33 +384,31 @@ class _AppState extends State<App> {
         xMove: (80 + ((size.width - 180) / 4)) + sV,
         yMove: h(hType, 202, 218, 234, 250),
       );
-    } else if (scrollValue > size.height / 3 &&
-        scrollValue <= (size.height / 3) * 2) {
+    } else if (sV > size.height / 3 && sV <= (size.height / 3) * 2) {
       dCScrollValue1 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (scrollValue - (size.height / 3)),
+        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
       dCScrollValue2 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (scrollValue - (size.height / 3)),
+        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
-    } else if (scrollValue > (size.height / 3) * 2 &&
-        scrollValue <= (size.height / 3) * 3) {
+    } else if (sV > (size.height / 3) * 2 && sV <= (size.height / 3) * 3) {
       dCScrollValue1 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
-            (scrollValue - ((size.height / 3) * 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (scrollValue - (size.height / 3)),
+            (sV - ((size.height / 3) * 2)),
+        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
       dCScrollValue2 = DateCountdownScrollValue(
         xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
-            (scrollValue - ((size.height / 3) * 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (scrollValue - (size.height / 3)),
+            (sV - ((size.height / 3) * 2)),
+        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
     }
 
     final double opacity = size.height / 20;
 
-    if (scrollValue <= size.height * 2) {
+    if (scrollValue < size.height * 2) {
       if (scrollValue <= opacity) {
         opacityValue = 1;
         if (opacityValue != opacityMemory) setState(() {});
@@ -518,7 +514,7 @@ class _AppState extends State<App> {
     if (scrollValue == 0) setState(() {});
     if (scrollValue == size.height) setState(() {});
 
-    if (scrollValue > size.height * 2) {
+    if (scrollValue >= size.height * 2) {
       if (scrollValue - (size.height * 2) <= opacity) {
         opacityValue = 1;
         flashValue = 1;
