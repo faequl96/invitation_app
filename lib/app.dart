@@ -408,7 +408,7 @@ class _AppState extends State<App> {
 
     final double opacity = size.height / 20;
 
-    if (scrollValue < size.height * 2) {
+    if (scrollValue <= size.height) {
       if (scrollValue <= opacity) {
         opacityValue = 1;
         if (opacityValue != opacityMemory) setState(() {});
@@ -458,12 +458,10 @@ class _AppState extends State<App> {
         opacityValue = 0.55;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-        flashValue = 0;
       } else if (scrollValue > opacity * 10 && scrollValue <= opacity * 11) {
         opacityValue = 0.5;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-        flashValue = 0;
       } else if (scrollValue > opacity * 11 && scrollValue <= opacity * 12) {
         opacityValue = 0.45;
         if (opacityValue != opacityMemory) setState(() {});
@@ -500,10 +498,12 @@ class _AppState extends State<App> {
         opacityValue = 0.05;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
+        flashValue = 0;
       } else if (scrollValue > opacity * 20 && scrollValue <= opacity * 21) {
         opacityValue = 0;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
+        flashValue = 0;
       }
 
       if (opacityValue == opacityMemory) {
@@ -514,7 +514,7 @@ class _AppState extends State<App> {
     if (scrollValue == 0) setState(() {});
     if (scrollValue == size.height) setState(() {});
 
-    if (scrollValue >= size.height * 2) {
+    if (scrollValue > size.height * 2) {
       if (scrollValue - (size.height * 2) <= opacity) {
         opacityValue = 1;
         flashValue = 1;
