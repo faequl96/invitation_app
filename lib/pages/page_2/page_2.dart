@@ -25,7 +25,7 @@ class Page2 extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            margin: EdgeInsets.all(w(wType, 14, 16, 18, 20)),
+            margin: EdgeInsets.all(w(wType, 22, 24, 26, 28)),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(2),
               border: const GradientBoxBorder(
@@ -49,9 +49,9 @@ class Page2 extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   Color.fromARGB(0, 230, 211, 164),
-                  Color.fromARGB(64, 230, 211, 164),
-                  Color.fromARGB(76, 230, 211, 164),
-                  Color.fromARGB(64, 230, 211, 164),
+                  Color.fromARGB(54, 230, 211, 164),
+                  Color.fromARGB(66, 230, 211, 164),
+                  Color.fromARGB(54, 230, 211, 164),
                   Color.fromARGB(0, 230, 211, 164),
                 ],
                 stops: [0.1, 0.4, 0.5, 0.6, 0.9],
@@ -64,14 +64,28 @@ class Page2 extends StatelessWidget {
             width: size.width,
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: w(wType, 28, 30, 32, 34),
+                horizontal: w(wType, 36, 38, 40, 42),
               ),
               child: Column(
                 children: [
                   SizedBox(height: h(hType, 40, 56, 72, 88)),
                   Image.asset(
                     "assets/bismillah.png",
-                    width: w(wType, 130, 142, 154, 166),
+                    width: w(wType, 120, 132, 144, 156),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text.rich(
+                    TextSpan(
+                      children: [
+                        WidgetSpan(child: SizedBox(width: 36)),
+                        TextSpan(
+                          text:
+                              '"Dan di antara tanda-tanda (kebesaran)-Nya adalah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya". (Ar-Ruum Ayat 21)',
+                        )
+                      ],
+                    ),
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -83,10 +97,19 @@ class Page2 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 14),
-                  const Text(
-                    "Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala. Kami mengundang Bapak/Ibu/Saudara/I, untuk menghadiri resepsi pernikahan kami.",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  )
+                  const Text.rich(
+                    TextSpan(
+                      children: [
+                        WidgetSpan(child: SizedBox(width: 36)),
+                        TextSpan(
+                          text:
+                              "Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala. Kami mengundang Bapak/Ibu/Saudara/I, untuk menghadiri resepsi pernikahan kami.",
+                        )
+                      ],
+                    ),
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.justify,
+                  ),
                 ],
               ),
             ),
