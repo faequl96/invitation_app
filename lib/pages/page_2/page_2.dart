@@ -25,7 +25,10 @@ class Page2 extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            margin: EdgeInsets.all(w(wType, 22, 24, 26, 28)),
+            margin: EdgeInsets.symmetric(
+              horizontal: w(wType, 20, 22, 24, 26),
+              vertical: w(wType, 16, 18, 20, 22),
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(2),
               border: const GradientBoxBorder(
@@ -49,9 +52,47 @@ class Page2 extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   Color.fromARGB(0, 230, 211, 164),
-                  Color.fromARGB(54, 230, 211, 164),
-                  Color.fromARGB(66, 230, 211, 164),
-                  Color.fromARGB(54, 230, 211, 164),
+                  Color.fromARGB(34, 230, 211, 164),
+                  Color.fromARGB(46, 230, 211, 164),
+                  Color.fromARGB(34, 230, 211, 164),
+                  Color.fromARGB(0, 230, 211, 164),
+                ],
+                stops: [0.1, 0.4, 0.5, 0.6, 0.9],
+                transform: GradientRotation(-0.2),
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: w(wType, 14, 16, 18, 20),
+              vertical: w(wType, 30, 32, 34, 36),
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(2),
+              border: const GradientBoxBorder(
+                width: 2,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(0, 230, 211, 164),
+                    Color.fromARGB(255, 255, 198, 192),
+                    Color.fromARGB(255, 230, 211, 164),
+                    Color.fromARGB(255, 255, 198, 192),
+                    Color.fromARGB(0, 230, 211, 164),
+                  ],
+                  stops: [0.1, 0.4, 0.5, 0.6, 0.9],
+                  transform: GradientRotation(-0.2),
+                ),
+              ),
+              gradient: const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(0, 230, 211, 164),
+                  Color.fromARGB(34, 230, 211, 164),
+                  Color.fromARGB(46, 230, 211, 164),
+                  Color.fromARGB(34, 230, 211, 164),
                   Color.fromARGB(0, 230, 211, 164),
                 ],
                 stops: [0.1, 0.4, 0.5, 0.6, 0.9],
