@@ -93,8 +93,8 @@ class _CountDownState extends State<CountDown> {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: (size.width - 180) / 4,
-      width: (size.width - 180) / 4,
+      height: (size.width - w(widget.wType, 156, 164, 172, 180)) / 4,
+      width: (size.width - w(widget.wType, 156, 164, 172, 180)) / 4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: getFrameColor(),
@@ -112,14 +112,14 @@ class _CountDownState extends State<CountDown> {
               getUnitTimeValue(),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: w(widget.wType, 12, 13, 14, 15),
+                fontSize: w(widget.wType, 13, 14, 15, 16),
                 height: 1.2,
               ),
             ),
             Text(
               getUnitTime(),
               style: TextStyle(
-                fontSize: w(widget.wType, 9, 10, 11, 12),
+                fontSize: w(widget.wType, 10, 11, 12, 13),
                 height: 1,
               ),
             ),

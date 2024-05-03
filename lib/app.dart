@@ -177,13 +177,24 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              left: dCScrollValue2.xMove >= (80 + ((size.width - 180) / 4)) &&
+              left: dCScrollValue2.xMove >=
+                          (w(wType, 68, 72, 76, 80) +
+                              ((size.width - w(wType, 156, 164, 172, 180)) /
+                                  4)) &&
                       dCScrollValue2.xMove <=
-                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                          (size.width / 2) -
+                              (((size.width - w(wType, 156, 164, 172, 180)) /
+                                      4) /
+                                  2)
                   ? dCScrollValue2.xMove
-                  : dCScrollValue2.xMove < (80 + ((size.width - 180) / 4))
-                      ? (80 + ((size.width - 180) / 4))
-                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+                  : dCScrollValue2.xMove <
+                          (w(wType, 68, 72, 76, 80) +
+                              ((size.width - w(wType, 156, 164, 172, 180)) / 4))
+                      ? (w(wType, 68, 72, 76, 80) +
+                          ((size.width - w(wType, 156, 164, 172, 180)) / 4))
+                      : (size.width / 2) -
+                          (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
+                              2),
               bottom: dCScrollValue2.yMove >= 40
                   ? dCScrollValue2.yMove
                   : dCScrollValue2.yMove < 40
@@ -196,13 +207,24 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              right: dCScrollValue2.xMove >= (80 + ((size.width - 180) / 4)) &&
+              right: dCScrollValue2.xMove >=
+                          (w(wType, 68, 72, 76, 80) +
+                              ((size.width - w(wType, 156, 164, 172, 180)) /
+                                  4)) &&
                       dCScrollValue2.xMove <=
-                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                          (size.width / 2) -
+                              (((size.width - w(wType, 156, 164, 172, 180)) /
+                                      4) /
+                                  2)
                   ? dCScrollValue2.xMove
-                  : dCScrollValue2.xMove < (80 + ((size.width - 180) / 4))
-                      ? (80 + ((size.width - 180) / 4))
-                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+                  : dCScrollValue2.xMove <
+                          (w(wType, 68, 72, 76, 80) +
+                              ((size.width - w(wType, 156, 164, 172, 180)) / 4))
+                      ? (w(wType, 68, 72, 76, 80) +
+                          ((size.width - w(wType, 156, 164, 172, 180)) / 4))
+                      : (size.width / 2) -
+                          (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
+                              2),
               bottom: dCScrollValue2.yMove >= 40
                   ? dCScrollValue2.yMove
                   : dCScrollValue2.yMove < 40
@@ -215,13 +237,18 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              right: dCScrollValue1.xMove >= 60 &&
+              right: dCScrollValue1.xMove >= w(wType, 48, 52, 56, 60) &&
                       dCScrollValue1.xMove <=
-                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                          (size.width / 2) -
+                              (((size.width - w(wType, 156, 164, 172, 180)) /
+                                      4) /
+                                  2)
                   ? dCScrollValue1.xMove
-                  : dCScrollValue1.xMove < 60
-                      ? 60
-                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+                  : dCScrollValue1.xMove < w(wType, 48, 52, 56, 60)
+                      ? w(wType, 48, 52, 56, 60)
+                      : (size.width / 2) -
+                          (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
+                              2),
               bottom: dCScrollValue1.yMove >= 40
                   ? dCScrollValue1.yMove
                   : dCScrollValue1.yMove < 40
@@ -234,13 +261,18 @@ class _AppState extends State<App> {
               ),
             ),
             Positioned(
-              left: dCScrollValue1.xMove >= 60 &&
+              left: dCScrollValue1.xMove >= w(wType, 48, 52, 56, 60) &&
                       dCScrollValue1.xMove <=
-                          (size.width / 2) - (((size.width - 180) / 4) / 2)
+                          (size.width / 2) -
+                              (((size.width - w(wType, 156, 164, 172, 180)) /
+                                      4) /
+                                  2)
                   ? dCScrollValue1.xMove
-                  : dCScrollValue1.xMove < 60
-                      ? 60
-                      : (size.width / 2) - (((size.width - 180) / 4) / 2),
+                  : dCScrollValue1.xMove < w(wType, 48, 52, 56, 60)
+                      ? w(wType, 48, 52, 56, 60)
+                      : (size.width / 2) -
+                          (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
+                              2),
               bottom: dCScrollValue1.yMove >= 40
                   ? dCScrollValue1.yMove
                   : dCScrollValue1.yMove < 40
@@ -356,11 +388,12 @@ class _AppState extends State<App> {
     final Size size = MediaQuery.of(context).size;
 
     dCScrollValue1 = DateCountdownScrollValue(
-      xMove: 60,
+      xMove: w(wType, 48, 52, 56, 60),
       yMove: h(hType, 202, 218, 234, 250),
     );
     dCScrollValue2 = DateCountdownScrollValue(
-      xMove: 80 + ((size.width - 180) / 4),
+      xMove: w(wType, 68, 72, 76, 80) +
+          ((size.width - w(wType, 156, 164, 172, 180)) / 4),
       yMove: h(hType, 202, 218, 234, 250),
     );
     setState(() {});
@@ -377,30 +410,36 @@ class _AppState extends State<App> {
 
     if (sV > 0 && sV <= size.height / 3) {
       dCScrollValue1 = DateCountdownScrollValue(
-        xMove: 60 + sV,
+        xMove: w(wType, 48, 52, 56, 60) + sV,
         yMove: h(hType, 202, 218, 234, 250),
       );
       dCScrollValue2 = DateCountdownScrollValue(
-        xMove: (80 + ((size.width - 180) / 4)) + sV,
+        xMove: (w(wType, 68, 72, 76, 80) +
+                ((size.width - w(wType, 156, 164, 172, 180)) / 4)) +
+            sV,
         yMove: h(hType, 202, 218, 234, 250),
       );
     } else if (sV > size.height / 3 && sV <= (size.height / 3) * 2) {
       dCScrollValue1 = DateCountdownScrollValue(
-        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
+        xMove: ((size.width / 2) -
+            (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
       dCScrollValue2 = DateCountdownScrollValue(
-        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)),
+        xMove: ((size.width / 2) -
+            (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
     } else if (sV > (size.height / 3) * 2 && sV <= (size.height / 3) * 3) {
       dCScrollValue1 = DateCountdownScrollValue(
-        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
+        xMove: ((size.width / 2) -
+                (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)) -
             (sV - ((size.height / 3) * 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
       dCScrollValue2 = DateCountdownScrollValue(
-        xMove: ((size.width / 2) - (((size.width - 180) / 4) / 2)) -
+        xMove: ((size.width / 2) -
+                (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)) -
             (sV - ((size.height / 3) * 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
