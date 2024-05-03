@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:invitation_app/enum/enums.dart';
 import 'package:invitation_app/methods/methods.dart';
+import 'package:invitation_app/pages/cover_page/countdown.dart';
 
 class Page2 extends StatelessWidget {
   const Page2({super.key, required this.hType, required this.wType});
@@ -41,7 +42,7 @@ class Page2 extends StatelessWidget {
                     Color.fromARGB(255, 255, 198, 192),
                     Color.fromARGB(255, 230, 211, 164),
                     Color.fromARGB(255, 255, 198, 192),
-                    Color.fromARGB(0, 230, 211, 164),
+                    Color.fromARGB(255, 230, 211, 164),
                   ],
                   stops: [0.1, 0.4, 0.5, 0.6, 0.9],
                   transform: GradientRotation(-0.2),
@@ -52,9 +53,9 @@ class Page2 extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   Color.fromARGB(0, 230, 211, 164),
-                  Color.fromARGB(34, 230, 211, 164),
-                  Color.fromARGB(46, 230, 211, 164),
-                  Color.fromARGB(34, 230, 211, 164),
+                  Color.fromARGB(14, 230, 211, 164),
+                  Color.fromARGB(20, 230, 211, 164),
+                  Color.fromARGB(14, 230, 211, 164),
                   Color.fromARGB(0, 230, 211, 164),
                 ],
                 stops: [0.1, 0.4, 0.5, 0.6, 0.9],
@@ -79,7 +80,7 @@ class Page2 extends StatelessWidget {
                     Color.fromARGB(255, 255, 198, 192),
                     Color.fromARGB(255, 230, 211, 164),
                     Color.fromARGB(255, 255, 198, 192),
-                    Color.fromARGB(0, 230, 211, 164),
+                    Color.fromARGB(255, 230, 211, 164),
                   ],
                   stops: [0.1, 0.4, 0.5, 0.6, 0.9],
                   transform: GradientRotation(-0.2),
@@ -90,9 +91,9 @@ class Page2 extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   Color.fromARGB(0, 230, 211, 164),
-                  Color.fromARGB(34, 230, 211, 164),
-                  Color.fromARGB(46, 230, 211, 164),
-                  Color.fromARGB(34, 230, 211, 164),
+                  Color.fromARGB(14, 230, 211, 164),
+                  Color.fromARGB(20, 230, 211, 164),
+                  Color.fromARGB(14, 230, 211, 164),
                   Color.fromARGB(0, 230, 211, 164),
                 ],
                 stops: [0.1, 0.4, 0.5, 0.6, 0.9],
@@ -109,26 +110,27 @@ class Page2 extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  SizedBox(height: h(hType, 40, 56, 72, 88)),
+                  SizedBox(height: h(hType, 72, 88, 104, 120)),
                   Image.asset(
                     "assets/bismillah.png",
                     width: w(wType, 120, 132, 144, 156),
                   ),
-                  const SizedBox(height: 16),
-                  const Text.rich(
-                    TextSpan(
-                      children: [
-                        WidgetSpan(child: SizedBox(width: 36)),
-                        TextSpan(
-                          text:
-                              '"Dan di antara tanda-tanda (kebesaran)-Nya adalah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya". (Ar-Ruum Ayat 21)',
-                        )
-                      ],
-                    ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    '"Dan di antara tanda-tanda (kebesaran)-Nya adalah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya".',
                     style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.justify,
+                    textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 4),
+                  const Text(
+                    '(Ar-Ruum Ayat 21)',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 230, 211, 164),
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 28),
                   const Text(
                     "Assalamu'alaikum Wr. Wb.",
                     style: TextStyle(
@@ -137,40 +139,68 @@ class Page2 extends StatelessWidget {
                       color: Color.fromARGB(255, 230, 211, 164),
                     ),
                   ),
-                  const SizedBox(height: 14),
-                  const Text.rich(
-                    TextSpan(
-                      children: [
-                        WidgetSpan(child: SizedBox(width: 36)),
-                        TextSpan(
-                          text:
-                              "Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala. Kami mengundang Bapak/Ibu/Saudara/I, untuk menghadiri resepsi pernikahan kami.",
-                        )
-                      ],
-                    ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    "Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala. Kami mengundang Bapak/Ibu/Saudara/I, untuk menghadiri resepsi pernikahan kami.",
                     style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.justify,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
           ),
           Positioned(
-            top: -4,
-            left: -4,
-            child: Image.asset(
-              "assets/frame_top_left.png",
-              width: w(wType, 120, 128, 136, 144),
+            left: 120,
+            bottom: 50,
+            child: CountDown(
+              hType: hType,
+              wType: wType,
+              unitTimeType: UnitTimeType.Hour,
             ),
           ),
           Positioned(
-            bottom: -4,
-            right: -4,
-            child: Image.asset(
-              "assets/frame_bottom_right.png",
-              width: w(wType, 120, 128, 136, 144),
+            right: 120,
+            bottom: 50,
+            child: CountDown(
+              hType: hType,
+              wType: wType,
+              unitTimeType: UnitTimeType.Minute,
             ),
           ),
+          Positioned(
+            right: 60,
+            bottom: 50,
+            child: CountDown(
+              hType: hType,
+              wType: wType,
+              unitTimeType: UnitTimeType.Second,
+            ),
+          ),
+          Positioned(
+            left: 60,
+            bottom: 50,
+            child: CountDown(
+              hType: hType,
+              wType: wType,
+              unitTimeType: UnitTimeType.Day,
+            ),
+          ),
+          Positioned(
+            top: -8,
+            left: -4,
+            child: Image.asset(
+              "assets/frame_top_left.png",
+              width: w(wType, 150, 160, 170, 180),
+            ),
+          ),
+          // Positioned(
+          //   bottom: -4,
+          //   right: -4,
+          //   child: Image.asset(
+          //     "assets/frame_bottom_right.png",
+          //     width: w(wType, 120, 130, 140, 150),
+          //   ),
+          // ),
         ],
       ),
     );

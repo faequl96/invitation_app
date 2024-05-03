@@ -21,7 +21,7 @@ class Page1 extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    final DateFormat dateFormater = DateFormat("EEEE, dd MMM yyyy", "id_ID");
+    final DateFormat dateFormater = DateFormat("EEEE, dd MMMM yyyy", "id_ID");
 
     return Container(
       height: size.height,
