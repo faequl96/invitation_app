@@ -3,11 +3,11 @@ import 'package:invitation_app/enum/enums.dart';
 import 'package:invitation_app/methods/methods.dart';
 import 'package:invitation_app/models/date_countdown_scroll_value.dart';
 import 'package:invitation_app/pages/cover_page/countdown.dart';
-import 'package:invitation_app/pages/cover_page/key_invitation.dart';
+// import 'package:invitation_app/pages/cover_page/key_invitation.dart';
 import 'package:invitation_app/pages/cover_page/light_effect.dart';
 import 'package:invitation_app/pages/cover_page/right_bg.dart';
 import 'package:invitation_app/pages/cover_page/left_bg.dart';
-import 'package:invitation_app/pages/cover_page/seal_invitation.dart';
+// import 'package:invitation_app/pages/cover_page/seal_invitation.dart';
 import 'package:invitation_app/pages/cover_page/swipe_up.dart';
 import 'package:invitation_app/pages/cover_page/title_invitation.dart';
 import 'package:invitation_app/pages/page_1/page_1.dart';
@@ -306,7 +306,7 @@ class _AppState extends State<App> {
                     children: [
                       SizedBox(height: size.height, width: double.maxFinite),
                       SizedBox(height: size.height, width: double.maxFinite),
-                      const Page2(),
+                      Page2(hType: hType, wType: wType),
                       SizedBox(height: size.height, width: double.maxFinite),
                     ],
                   ),
