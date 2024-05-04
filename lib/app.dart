@@ -42,6 +42,8 @@ class _AppState extends State<App> {
     yMove: 0,
   );
 
+  double timeVerticalScrollValue = 50;
+
   bool isKeyOpened = false;
   bool isSealOpened = false;
   bool isOpenCompleted = false;
@@ -204,6 +206,7 @@ class _AppState extends State<App> {
                 hType: hType,
                 wType: wType,
                 unitTimeType: UnitTimeType.Hour,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
               ),
             ),
             Positioned(
@@ -234,6 +237,7 @@ class _AppState extends State<App> {
                 hType: hType,
                 wType: wType,
                 unitTimeType: UnitTimeType.Minute,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
               ),
             ),
             Positioned(
@@ -258,6 +262,7 @@ class _AppState extends State<App> {
                 hType: hType,
                 wType: wType,
                 unitTimeType: UnitTimeType.Second,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
               ),
             ),
             Positioned(
@@ -282,6 +287,49 @@ class _AppState extends State<App> {
                 hType: hType,
                 wType: wType,
                 unitTimeType: UnitTimeType.Day,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
+              ),
+            ),
+            Positioned(
+              left: (w(wType, 68, 72, 76, 80) +
+                  ((size.width - w(wType, 156, 164, 172, 180)) / 4)),
+              bottom: 50,
+              child: CountDown(
+                hType: hType,
+                wType: wType,
+                unitTimeType: UnitTimeType.Hour,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
+              ),
+            ),
+            Positioned(
+              right: (w(wType, 68, 72, 76, 80) +
+                  ((size.width - w(wType, 156, 164, 172, 180)) / 4)),
+              bottom: 50,
+              child: CountDown(
+                hType: hType,
+                wType: wType,
+                unitTimeType: UnitTimeType.Minute,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
+              ),
+            ),
+            Positioned(
+              right: w(wType, 48, 52, 56, 60),
+              bottom: 50,
+              child: CountDown(
+                hType: hType,
+                wType: wType,
+                unitTimeType: UnitTimeType.Second,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
+              ),
+            ),
+            Positioned(
+              left: w(wType, 48, 52, 56, 60),
+              bottom: 50,
+              child: CountDown(
+                hType: hType,
+                wType: wType,
+                unitTimeType: UnitTimeType.Day,
+                size: (size.width - w(wType, 156, 164, 172, 180)) / 4,
               ),
             ),
             if (scrollValue == 0)

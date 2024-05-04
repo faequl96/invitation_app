@@ -150,39 +150,45 @@ class Page2 extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 120,
-            bottom: 50,
+            left: (w(wType, 62, 66, 70, 74) +
+                ((size.width - w(wType, 140, 148, 156, 164)) / 4)),
+            bottom: 48,
             child: CountDown(
               hType: hType,
               wType: wType,
               unitTimeType: UnitTimeType.Hour,
+              size: (size.width - w(wType, 140, 148, 156, 164)) / 4,
             ),
           ),
           Positioned(
-            right: 120,
-            bottom: 50,
+            right: (w(wType, 62, 66, 70, 74) +
+                ((size.width - w(wType, 140, 148, 156, 164)) / 4)),
+            bottom: 48,
             child: CountDown(
               hType: hType,
               wType: wType,
               unitTimeType: UnitTimeType.Minute,
+              size: (size.width - w(wType, 140, 148, 156, 164)) / 4,
             ),
           ),
           Positioned(
-            right: 60,
-            bottom: 50,
+            right: w(wType, 46, 50, 54, 58),
+            bottom: 48,
             child: CountDown(
               hType: hType,
               wType: wType,
               unitTimeType: UnitTimeType.Second,
+              size: (size.width - w(wType, 140, 148, 156, 164)) / 4,
             ),
           ),
           Positioned(
-            left: 60,
-            bottom: 50,
+            left: w(wType, 46, 50, 54, 58),
+            bottom: 48,
             child: CountDown(
               hType: hType,
               wType: wType,
               unitTimeType: UnitTimeType.Day,
+              size: (size.width - w(wType, 140, 148, 156, 164)) / 4,
             ),
           ),
           Positioned(

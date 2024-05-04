@@ -10,11 +10,13 @@ class CountDown extends StatefulWidget {
     required this.hType,
     required this.wType,
     required this.unitTimeType,
+    required this.size,
   });
 
   final H hType;
   final W wType;
   final UnitTimeType unitTimeType;
+  final double size;
 
   @override
   State<CountDown> createState() => _CountDownState();
@@ -90,11 +92,9 @@ class _CountDownState extends State<CountDown> {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
     return Container(
-      height: (size.width - w(widget.wType, 156, 164, 172, 180)) / 4,
-      width: (size.width - w(widget.wType, 156, 164, 172, 180)) / 4,
+      height: widget.size,
+      width: widget.size,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: getFrameColor(),
