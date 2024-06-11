@@ -70,7 +70,7 @@ class _AppViewState extends State<AppView> {
         wType = W.Xl;
       }
 
-      _initCountdownScrollValue();
+      _initCountdownPosition();
     });
 
     _pageController.addListener(_scrollListener);
@@ -399,7 +399,7 @@ class _AppViewState extends State<AppView> {
     );
   }
 
-  void _initCountdownScrollValue() {
+  void _initCountdownPosition() {
     final Size size = MediaQuery.of(context).size;
 
     cdPosition1 = PositionValue(
@@ -460,100 +460,100 @@ class _AppViewState extends State<AppView> {
       );
     }
 
-    final double opacity = size.height / 20;
+    final double fraction = size.height / 20;
 
     if (scrollValue <= size.height) {
-      if (scrollValue <= opacity) {
+      if (scrollValue <= fraction) {
         opacityValue = 1;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 1;
-      } else if (scrollValue > opacity && scrollValue <= opacity * 2) {
+      } else if (scrollValue > fraction && scrollValue <= fraction * 2) {
         opacityValue = 0.95;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0.85;
-      } else if (scrollValue > opacity * 2 && scrollValue <= opacity * 3) {
+      } else if (scrollValue > fraction * 2 && scrollValue <= fraction * 3) {
         opacityValue = 0.9;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0.7;
-      } else if (scrollValue > opacity * 3 && scrollValue <= opacity * 4) {
+      } else if (scrollValue > fraction * 3 && scrollValue <= fraction * 4) {
         opacityValue = 0.85;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0.55;
-      } else if (scrollValue > opacity * 4 && scrollValue <= opacity * 5) {
+      } else if (scrollValue > fraction * 4 && scrollValue <= fraction * 5) {
         opacityValue = 0.8;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0.4;
-      } else if (scrollValue > opacity * 5 && scrollValue <= opacity * 6) {
+      } else if (scrollValue > fraction * 5 && scrollValue <= fraction * 6) {
         opacityValue = 0.75;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0.25;
-      } else if (scrollValue > opacity * 6 && scrollValue <= opacity * 7) {
+      } else if (scrollValue > fraction * 6 && scrollValue <= fraction * 7) {
         opacityValue = 0.7;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0.1;
-      } else if (scrollValue > opacity * 7 && scrollValue <= opacity * 8) {
+      } else if (scrollValue > fraction * 7 && scrollValue <= fraction * 8) {
         opacityValue = 0.65;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0;
-      } else if (scrollValue > opacity * 8 && scrollValue <= opacity * 9) {
+      } else if (scrollValue > fraction * 8 && scrollValue <= fraction * 9) {
         opacityValue = 0.6;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0;
-      } else if (scrollValue > opacity * 9 && scrollValue <= opacity * 10) {
+      } else if (scrollValue > fraction * 9 && scrollValue <= fraction * 10) {
         opacityValue = 0.55;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 10 && scrollValue <= opacity * 11) {
+      } else if (scrollValue > fraction * 10 && scrollValue <= fraction * 11) {
         opacityValue = 0.5;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 11 && scrollValue <= opacity * 12) {
+      } else if (scrollValue > fraction * 11 && scrollValue <= fraction * 12) {
         opacityValue = 0.45;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 12 && scrollValue <= opacity * 13) {
+      } else if (scrollValue > fraction * 12 && scrollValue <= fraction * 13) {
         opacityValue = 0.4;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 13 && scrollValue <= opacity * 14) {
+      } else if (scrollValue > fraction * 13 && scrollValue <= fraction * 14) {
         opacityValue = 0.35;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 14 && scrollValue <= opacity * 15) {
+      } else if (scrollValue > fraction * 14 && scrollValue <= fraction * 15) {
         opacityValue = 0.3;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 15 && scrollValue <= opacity * 16) {
+      } else if (scrollValue > fraction * 15 && scrollValue <= fraction * 16) {
         opacityValue = 0.25;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 16 && scrollValue <= opacity * 17) {
+      } else if (scrollValue > fraction * 16 && scrollValue <= fraction * 17) {
         opacityValue = 0.2;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 17 && scrollValue <= opacity * 18) {
+      } else if (scrollValue > fraction * 17 && scrollValue <= fraction * 18) {
         opacityValue = 0.15;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 18 && scrollValue <= opacity * 19) {
+      } else if (scrollValue > fraction * 18 && scrollValue <= fraction * 19) {
         opacityValue = 0.1;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
-      } else if (scrollValue > opacity * 19 && scrollValue <= opacity * 20) {
+      } else if (scrollValue > fraction * 19 && scrollValue <= fraction * 20) {
         opacityValue = 0.05;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
         flashValue = 0;
-      } else if (scrollValue > opacity * 20 && scrollValue <= opacity * 21) {
+      } else if (scrollValue > fraction * 20 && scrollValue <= fraction * 21) {
         opacityValue = 0;
         if (opacityValue != opacityMemory) setState(() {});
         opacityMemory = opacityValue;
@@ -569,78 +569,78 @@ class _AppViewState extends State<AppView> {
     if (scrollValue == size.height) setState(() {});
 
     if (scrollValue > size.height * 2) {
-      if (scrollValue - (size.height * 2) <= opacity) {
+      if (scrollValue - (size.height * 2) <= fraction) {
         opacityValue = 1;
         flashValue = 1;
-      } else if (scrollValue - (size.height * 2) > opacity &&
-          scrollValue - (size.height * 2) <= opacity * 2) {
+      } else if (scrollValue - (size.height * 2) > fraction &&
+          scrollValue - (size.height * 2) <= fraction * 2) {
         opacityValue = 0.95;
         flashValue = 0.85;
-      } else if (scrollValue - (size.height * 2) > opacity * 2 &&
-          scrollValue - (size.height * 2) <= opacity * 3) {
+      } else if (scrollValue - (size.height * 2) > fraction * 2 &&
+          scrollValue - (size.height * 2) <= fraction * 3) {
         opacityValue = 0.9;
         flashValue = 0.7;
-      } else if (scrollValue - (size.height * 2) > opacity * 3 &&
-          scrollValue - (size.height * 2) <= opacity * 4) {
+      } else if (scrollValue - (size.height * 2) > fraction * 3 &&
+          scrollValue - (size.height * 2) <= fraction * 4) {
         opacityValue = 0.85;
         flashValue = 0.55;
-      } else if (scrollValue - (size.height * 2) > opacity * 4 &&
-          scrollValue - (size.height * 2) <= opacity * 5) {
+      } else if (scrollValue - (size.height * 2) > fraction * 4 &&
+          scrollValue - (size.height * 2) <= fraction * 5) {
         opacityValue = 0.8;
         flashValue = 0.4;
-      } else if (scrollValue - (size.height * 2) > opacity * 5 &&
-          scrollValue - (size.height * 2) <= opacity * 6) {
+      } else if (scrollValue - (size.height * 2) > fraction * 5 &&
+          scrollValue - (size.height * 2) <= fraction * 6) {
         opacityValue = 0.75;
         flashValue = 0.25;
-      } else if (scrollValue - (size.height * 2) > opacity * 6 &&
-          scrollValue - (size.height * 2) <= opacity * 7) {
+      } else if (scrollValue - (size.height * 2) > fraction * 6 &&
+          scrollValue - (size.height * 2) <= fraction * 7) {
         opacityValue = 0.7;
         flashValue = 0.1;
-      } else if (scrollValue - (size.height * 2) > opacity * 7 &&
-          scrollValue - (size.height * 2) <= opacity * 8) {
+      } else if (scrollValue - (size.height * 2) > fraction * 7 &&
+          scrollValue - (size.height * 2) <= fraction * 8) {
         opacityValue = 0.65;
         flashValue = 0;
-      } else if (scrollValue - (size.height * 2) > opacity * 8 &&
-          scrollValue - (size.height * 2) <= opacity * 9) {
+      } else if (scrollValue - (size.height * 2) > fraction * 8 &&
+          scrollValue - (size.height * 2) <= fraction * 9) {
         opacityValue = 0.6;
         flashValue = 0;
-      } else if (scrollValue - (size.height * 2) > opacity * 9 &&
-          scrollValue - (size.height * 2) <= opacity * 10) {
+      } else if (scrollValue - (size.height * 2) > fraction * 9 &&
+          scrollValue - (size.height * 2) <= fraction * 10) {
         opacityValue = 0.55;
         flashValue = 0;
-      } else if (scrollValue - (size.height * 2) > opacity * 10 &&
-          scrollValue - (size.height * 2) <= opacity * 11) {
+      } else if (scrollValue - (size.height * 2) > fraction * 10 &&
+          scrollValue - (size.height * 2) <= fraction * 11) {
         opacityValue = 0.5;
         flashValue = 0;
-      } else if (scrollValue - (size.height * 2) > opacity * 11 &&
-          scrollValue - (size.height * 2) <= opacity * 12) {
+      } else if (scrollValue - (size.height * 2) > fraction * 11 &&
+          scrollValue - (size.height * 2) <= fraction * 12) {
         opacityValue = 0.45;
-      } else if (scrollValue - (size.height * 2) > opacity * 12 &&
-          scrollValue - (size.height * 2) <= opacity * 13) {
+      } else if (scrollValue - (size.height * 2) > fraction * 12 &&
+          scrollValue - (size.height * 2) <= fraction * 13) {
         opacityValue = 0.4;
-      } else if (scrollValue - (size.height * 2) > opacity * 13 &&
-          scrollValue - (size.height * 2) <= opacity * 14) {
+      } else if (scrollValue - (size.height * 2) > fraction * 13 &&
+          scrollValue - (size.height * 2) <= fraction * 14) {
         opacityValue = 0.35;
-      } else if (scrollValue - (size.height * 2) > opacity * 14 &&
-          scrollValue - (size.height * 2) <= opacity * 15) {
+      } else if (scrollValue - (size.height * 2) > fraction * 14 &&
+          scrollValue - (size.height * 2) <= fraction * 15) {
         opacityValue = 0.3;
-      } else if (scrollValue - (size.height * 2) > opacity * 15 &&
-          scrollValue - (size.height * 2) <= opacity * 16) {
+      } else if (scrollValue - (size.height * 2) > fraction * 15 &&
+          scrollValue - (size.height * 2) <= fraction * 16) {
         opacityValue = 0.25;
-      } else if (scrollValue - (size.height * 2) > opacity * 16 &&
-          scrollValue - (size.height * 2) <= opacity * 17) {
+      } else if (scrollValue - (size.height * 2) > fraction * 16 &&
+          scrollValue - (size.height * 2) <= fraction * 17) {
         opacityValue = 0.2;
-      } else if (scrollValue - (size.height * 2) > opacity * 17 &&
-          scrollValue - (size.height * 2) <= opacity * 18) {
+      } else if (scrollValue - (size.height * 2) > fraction * 17 &&
+          scrollValue - (size.height * 2) <= fraction * 18) {
         opacityValue = 0.15;
-      } else if (scrollValue - (size.height * 2) > opacity * 18 &&
-          scrollValue - (size.height * 2) <= opacity * 19) {
+      } else if (scrollValue - (size.height * 2) > fraction * 18 &&
+          scrollValue - (size.height * 2) <= fraction * 19) {
         opacityValue = 0.1;
-      } else if (scrollValue - (size.height * 2) > opacity * 19 &&
-          scrollValue - (size.height * 2) <= opacity * 20) {
+      } else if (scrollValue - (size.height * 2) > fraction * 19 &&
+          scrollValue - (size.height * 2) <= fraction * 20) {
         opacityValue = 0.05;
-      } else if (scrollValue - (size.height * 2) > opacity * 20 &&
-          scrollValue - (size.height * 2) <= opacity * 21) {
+      } else if (scrollValue - (size.height * 2) > fraction * 20 &&
+          scrollValue - (size.height * 2) <= fraction * 21) {
         opacityValue = 0;
       }
     }
