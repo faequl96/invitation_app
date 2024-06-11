@@ -1,6 +1,6 @@
 class PositionValue {
-  PositionValue({required this.xMove, required this.yMove});
+  PositionValue({required this.xAxis, required this.yAxis});
 
-  double xMove;
-  double yMove;
+  double xAxis;
+  double yAxis;
 }

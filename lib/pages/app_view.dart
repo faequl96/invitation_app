@@ -33,8 +33,8 @@ class _AppViewState extends State<AppView> {
   double opacityMemory = 0;
   double flashValue = 1;
 
-  PositionValue cdPosition1 = PositionValue(xMove: 0, yMove: 0);
-  PositionValue cdPosition2 = PositionValue(xMove: 0, yMove: 0);
+  PositionValue cdPosition1 = PositionValue(xAxis: 0, yAxis: 0);
+  PositionValue cdPosition2 = PositionValue(xAxis: 0, yAxis: 0);
 
   double timeVerticalScrollValue = 50;
 
@@ -158,24 +158,24 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          left: cdPosition2.xMove >=
+          left: cdPosition2.xAxis >=
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4)) &&
-                  cdPosition2.xMove <=
+                  cdPosition2.xAxis <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? cdPosition2.xMove
-              : cdPosition2.xMove <
+              ? cdPosition2.xAxis
+              : cdPosition2.xAxis <
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   ? (w(wType, 68, 72, 76, 80) +
                       ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: cdPosition2.yMove >= 40
-              ? cdPosition2.yMove
-              : cdPosition2.yMove < 40
+          bottom: cdPosition2.yAxis >= 40
+              ? cdPosition2.yAxis
+              : cdPosition2.yAxis < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -186,24 +186,24 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          right: cdPosition2.xMove >=
+          right: cdPosition2.xAxis >=
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4)) &&
-                  cdPosition2.xMove <=
+                  cdPosition2.xAxis <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? cdPosition2.xMove
-              : cdPosition2.xMove <
+              ? cdPosition2.xAxis
+              : cdPosition2.xAxis <
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   ? (w(wType, 68, 72, 76, 80) +
                       ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: cdPosition2.yMove >= 40
-              ? cdPosition2.yMove
-              : cdPosition2.yMove < 40
+          bottom: cdPosition2.yAxis >= 40
+              ? cdPosition2.yAxis
+              : cdPosition2.yAxis < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -214,19 +214,19 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          right: cdPosition1.xMove >= w(wType, 48, 52, 56, 60) &&
-                  cdPosition1.xMove <=
+          right: cdPosition1.xAxis >= w(wType, 48, 52, 56, 60) &&
+                  cdPosition1.xAxis <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? cdPosition1.xMove
-              : cdPosition1.xMove < w(wType, 48, 52, 56, 60)
+              ? cdPosition1.xAxis
+              : cdPosition1.xAxis < w(wType, 48, 52, 56, 60)
                   ? w(wType, 48, 52, 56, 60)
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: cdPosition1.yMove >= 40
-              ? cdPosition1.yMove
-              : cdPosition1.yMove < 40
+          bottom: cdPosition1.yAxis >= 40
+              ? cdPosition1.yAxis
+              : cdPosition1.yAxis < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -237,19 +237,19 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          left: cdPosition1.xMove >= w(wType, 48, 52, 56, 60) &&
-                  cdPosition1.xMove <=
+          left: cdPosition1.xAxis >= w(wType, 48, 52, 56, 60) &&
+                  cdPosition1.xAxis <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? cdPosition1.xMove
-              : cdPosition1.xMove < w(wType, 48, 52, 56, 60)
+              ? cdPosition1.xAxis
+              : cdPosition1.xAxis < w(wType, 48, 52, 56, 60)
                   ? w(wType, 48, 52, 56, 60)
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: cdPosition1.yMove >= 40
-              ? cdPosition1.yMove
-              : cdPosition1.yMove < 40
+          bottom: cdPosition1.yAxis >= 40
+              ? cdPosition1.yAxis
+              : cdPosition1.yAxis < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -403,13 +403,13 @@ class _AppViewState extends State<AppView> {
     final Size size = MediaQuery.of(context).size;
 
     cdPosition1 = PositionValue(
-      xMove: w(wType, 48, 52, 56, 60),
-      yMove: h(hType, 202, 218, 234, 250),
+      xAxis: w(wType, 48, 52, 56, 60),
+      yAxis: h(hType, 202, 218, 234, 250),
     );
     cdPosition2 = PositionValue(
-      xMove: w(wType, 68, 72, 76, 80) +
+      xAxis: w(wType, 68, 72, 76, 80) +
           ((size.width - w(wType, 156, 164, 172, 180)) / 4),
-      yMove: h(hType, 202, 218, 234, 250),
+      yAxis: h(hType, 202, 218, 234, 250),
     );
     setState(() {});
   }
@@ -425,38 +425,38 @@ class _AppViewState extends State<AppView> {
 
     if (sV > 0 && sV <= size.height / 3) {
       cdPosition1 = PositionValue(
-        xMove: w(wType, 48, 52, 56, 60) + sV,
-        yMove: h(hType, 202, 218, 234, 250),
+        xAxis: w(wType, 48, 52, 56, 60) + sV,
+        yAxis: h(hType, 202, 218, 234, 250),
       );
       cdPosition2 = PositionValue(
-        xMove: (w(wType, 68, 72, 76, 80) +
+        xAxis: (w(wType, 68, 72, 76, 80) +
                 ((size.width - w(wType, 156, 164, 172, 180)) / 4)) +
             sV,
-        yMove: h(hType, 202, 218, 234, 250),
+        yAxis: h(hType, 202, 218, 234, 250),
       );
     } else if (sV > size.height / 3 && sV <= (size.height / 3) * 2) {
       cdPosition1 = PositionValue(
-        xMove: ((size.width / 2) -
+        xAxis: ((size.width / 2) -
             (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
+        yAxis: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
       cdPosition2 = PositionValue(
-        xMove: ((size.width / 2) -
+        xAxis: ((size.width / 2) -
             (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
+        yAxis: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
     } else if (sV > (size.height / 3) * 2 && sV <= (size.height / 3) * 3) {
       cdPosition1 = PositionValue(
-        xMove: ((size.width / 2) -
+        xAxis: ((size.width / 2) -
                 (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)) -
             (sV - ((size.height / 3) * 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
+        yAxis: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
       cdPosition2 = PositionValue(
-        xMove: ((size.width / 2) -
+        xAxis: ((size.width / 2) -
                 (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)) -
             (sV - ((size.height / 3) * 2)),
-        yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
+        yAxis: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
     }
 
