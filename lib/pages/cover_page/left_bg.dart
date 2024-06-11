@@ -7,14 +7,12 @@ class LeftBackground extends StatelessWidget {
     super.key,
     required this.hType,
     required this.wType,
-    required this.backgroundType,
     this.moveValue = 0,
     this.flashValue = 0,
   });
 
   final H hType;
   final W wType;
-  final BackgroundType backgroundType;
   final double moveValue;
   final double flashValue;
 
@@ -37,45 +35,43 @@ class LeftBackground extends StatelessWidget {
               image: const AssetImage("assets/landing_bg_left.png"),
             ),
           ),
-          backgroundType == BackgroundType.Cover
-              ? Positioned(
-                  right: -1,
-                  bottom: h(hType, 76, 84, 92, 100),
-                  child: Container(
-                    height: h(hType, 112, 118, 124, 130),
-                    width: size.width / 2 - w(wType, 34, 36, 38, 40),
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(14),
-                        bottomLeft: Radius.circular(14),
-                      ),
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromARGB(210, 255, 198, 192),
-                          Color.fromARGB(210, 230, 211, 164),
-                        ],
-                        stops: [0.3, 0.5],
-                      ),
-                    ),
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        left: 8,
-                        top: 8,
-                        bottom: 8,
-                      ),
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(8),
-                          bottomLeft: Radius.circular(8),
-                        ),
-                        color: Color.fromARGB(255, 255, 250, 230),
-                      ),
-                    ),
+          Positioned(
+            right: -1,
+            bottom: h(hType, 76, 84, 92, 100),
+            child: Container(
+              height: h(hType, 112, 118, 124, 130),
+              width: size.width / 2 - w(wType, 34, 36, 38, 40),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(14),
+                  bottomLeft: Radius.circular(14),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(210, 255, 198, 192),
+                    Color.fromARGB(210, 230, 211, 164),
+                  ],
+                  stops: [0.3, 0.5],
+                ),
+              ),
+              child: Container(
+                margin: const EdgeInsets.only(
+                  left: 8,
+                  top: 8,
+                  bottom: 8,
+                ),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    bottomLeft: Radius.circular(8),
                   ),
-                )
-              : const SizedBox.shrink(),
+                  color: Color.fromARGB(255, 255, 250, 230),
+                ),
+              ),
+            ),
+          ),
           Positioned(
             right: -2,
             child: Container(
@@ -95,17 +91,15 @@ class LeftBackground extends StatelessWidget {
                   : null,
             ),
           ),
-          backgroundType == BackgroundType.Cover
-              ? Positioned(
-                  right: -w(wType, 24, 26, 28, 30),
-                  bottom: h(hType, 298, 314, 330, 346),
-                  child: Image(
-                    width: h(hType, 116, 122, 128, 134),
-                    fit: BoxFit.cover,
-                    image: const AssetImage("assets/kelir_jawa_rose_gold.png"),
-                  ),
-                )
-              : const SizedBox.shrink(),
+          Positioned(
+            right: -w(wType, 24, 26, 28, 30),
+            bottom: h(hType, 298, 314, 330, 346),
+            child: Image(
+              width: h(hType, 116, 122, 128, 134),
+              fit: BoxFit.cover,
+              image: const AssetImage("assets/kelir_jawa_rose_gold.png"),
+            ),
+          ),
         ],
       ),
     );

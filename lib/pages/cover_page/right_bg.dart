@@ -7,8 +7,6 @@ class RightBackground extends StatelessWidget {
     super.key,
     required this.hType,
     required this.wType,
-    required this.backgroundType,
-    this.isLightEffect,
     this.isTransparent,
     this.moveValue = 0,
     this.flashValue = 0,
@@ -16,8 +14,6 @@ class RightBackground extends StatelessWidget {
 
   final H hType;
   final W wType;
-  final BackgroundType backgroundType;
-  final bool? isLightEffect;
   final bool? isTransparent;
   final double moveValue;
   final double flashValue;
@@ -45,45 +41,43 @@ class RightBackground extends StatelessWidget {
                 ),
           isTransparent == true
               ? const SizedBox.shrink()
-              : backgroundType == BackgroundType.Cover
-                  ? Positioned(
-                      left: -1,
-                      bottom: h(hType, 76, 84, 92, 100),
-                      child: Container(
-                        height: h(hType, 112, 118, 124, 130),
-                        width: size.width / 2 - w(wType, 34, 36, 38, 40),
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(14),
-                            bottomRight: Radius.circular(14),
-                          ),
-                          gradient: LinearGradient(
-                            begin: Alignment.bottomRight,
-                            end: Alignment.topLeft,
-                            colors: [
-                              Color.fromARGB(210, 255, 198, 192),
-                              Color.fromARGB(210, 230, 211, 164),
-                            ],
-                            stops: [0.3, 0.5],
-                          ),
-                        ),
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                            right: 8,
-                            top: 8,
-                            bottom: 8,
-                          ),
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(8),
-                              bottomRight: Radius.circular(8),
-                            ),
-                            color: Color.fromARGB(255, 255, 250, 230),
-                          ),
-                        ),
+              : Positioned(
+                  left: -1,
+                  bottom: h(hType, 76, 84, 92, 100),
+                  child: Container(
+                    height: h(hType, 112, 118, 124, 130),
+                    width: size.width / 2 - w(wType, 34, 36, 38, 40),
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(14),
+                        bottomRight: Radius.circular(14),
                       ),
-                    )
-                  : const SizedBox.shrink(),
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomRight,
+                        end: Alignment.topLeft,
+                        colors: [
+                          Color.fromARGB(210, 255, 198, 192),
+                          Color.fromARGB(210, 230, 211, 164),
+                        ],
+                        stops: [0.3, 0.5],
+                      ),
+                    ),
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        right: 8,
+                        top: 8,
+                        bottom: 8,
+                      ),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(8),
+                          bottomRight: Radius.circular(8),
+                        ),
+                        color: Color.fromARGB(255, 255, 250, 230),
+                      ),
+                    ),
+                  ),
+                ),
           isTransparent == true
               ? const SizedBox.shrink()
               : Positioned(
@@ -104,17 +98,15 @@ class RightBackground extends StatelessWidget {
                   ),
                 ),
           isTransparent == true
-              ? backgroundType == BackgroundType.Cover
-                  ? Positioned(
-                      left: -w(wType, 24, 26, 28, 30),
-                      bottom: h(hType, 298, 314, 330, 346),
-                      child: Image(
-                        width: h(hType, 116, 122, 128, 134),
-                        fit: BoxFit.cover,
-                        image: const AssetImage("assets/kelir_jawa_gold.png"),
-                      ),
-                    )
-                  : const SizedBox.shrink()
+              ? Positioned(
+                  left: -w(wType, 24, 26, 28, 30),
+                  bottom: h(hType, 298, 314, 330, 346),
+                  child: Image(
+                    width: h(hType, 116, 122, 128, 134),
+                    fit: BoxFit.cover,
+                    image: const AssetImage("assets/kelir_jawa_gold.png"),
+                  ),
+                )
               : const SizedBox.shrink(),
         ],
       ),

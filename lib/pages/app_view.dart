@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invitation_app/enum/enums.dart';
 import 'package:invitation_app/methods/methods.dart';
-import 'package:invitation_app/models/date_countdown_scroll_value.dart';
+import 'package:invitation_app/models/position_value.dart';
 import 'package:invitation_app/pages/cover_page/countdown.dart';
 // import 'package:invitation_app/pages/cover_page/key_invitation.dart';
 import 'package:invitation_app/pages/cover_page/light_effect.dart';
@@ -33,14 +33,8 @@ class _AppViewState extends State<AppView> {
   double opacityMemory = 0;
   double flashValue = 1;
 
-  DateCountdownScrollValue dCScrollValue1 = DateCountdownScrollValue(
-    xMove: 0,
-    yMove: 0,
-  );
-  DateCountdownScrollValue dCScrollValue2 = DateCountdownScrollValue(
-    xMove: 0,
-    yMove: 0,
-  );
+  PositionValue cdPosition1 = PositionValue(xMove: 0, yMove: 0);
+  PositionValue cdPosition2 = PositionValue(xMove: 0, yMove: 0);
 
   double timeVerticalScrollValue = 50;
 
@@ -76,7 +70,7 @@ class _AppViewState extends State<AppView> {
         wType = W.Xl;
       }
 
-      _setCountdownScrollValue();
+      _initCountdownScrollValue();
     });
 
     _pageController.addListener(_scrollListener);
@@ -124,7 +118,6 @@ class _AppViewState extends State<AppView> {
                 child: RightBackground(
                   hType: hType,
                   wType: wType,
-                  backgroundType: BackgroundType.Cover,
                   moveValue: moveValue,
                   flashValue: flashValue,
                 ),
@@ -136,7 +129,6 @@ class _AppViewState extends State<AppView> {
                 child: LeftBackground(
                   hType: hType,
                   wType: wType,
-                  backgroundType: BackgroundType.Cover,
                   moveValue: moveValue,
                   flashValue: flashValue,
                 ),
@@ -148,7 +140,6 @@ class _AppViewState extends State<AppView> {
                 child: RightBackground(
                   hType: hType,
                   wType: wType,
-                  backgroundType: BackgroundType.Cover,
                   isTransparent: true,
                 ),
               ),
@@ -167,24 +158,24 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          left: dCScrollValue2.xMove >=
+          left: cdPosition2.xMove >=
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4)) &&
-                  dCScrollValue2.xMove <=
+                  cdPosition2.xMove <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? dCScrollValue2.xMove
-              : dCScrollValue2.xMove <
+              ? cdPosition2.xMove
+              : cdPosition2.xMove <
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   ? (w(wType, 68, 72, 76, 80) +
                       ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: dCScrollValue2.yMove >= 40
-              ? dCScrollValue2.yMove
-              : dCScrollValue2.yMove < 40
+          bottom: cdPosition2.yMove >= 40
+              ? cdPosition2.yMove
+              : cdPosition2.yMove < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -195,24 +186,24 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          right: dCScrollValue2.xMove >=
+          right: cdPosition2.xMove >=
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4)) &&
-                  dCScrollValue2.xMove <=
+                  cdPosition2.xMove <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? dCScrollValue2.xMove
-              : dCScrollValue2.xMove <
+              ? cdPosition2.xMove
+              : cdPosition2.xMove <
                       (w(wType, 68, 72, 76, 80) +
                           ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   ? (w(wType, 68, 72, 76, 80) +
                       ((size.width - w(wType, 156, 164, 172, 180)) / 4))
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: dCScrollValue2.yMove >= 40
-              ? dCScrollValue2.yMove
-              : dCScrollValue2.yMove < 40
+          bottom: cdPosition2.yMove >= 40
+              ? cdPosition2.yMove
+              : cdPosition2.yMove < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -223,19 +214,19 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          right: dCScrollValue1.xMove >= w(wType, 48, 52, 56, 60) &&
-                  dCScrollValue1.xMove <=
+          right: cdPosition1.xMove >= w(wType, 48, 52, 56, 60) &&
+                  cdPosition1.xMove <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? dCScrollValue1.xMove
-              : dCScrollValue1.xMove < w(wType, 48, 52, 56, 60)
+              ? cdPosition1.xMove
+              : cdPosition1.xMove < w(wType, 48, 52, 56, 60)
                   ? w(wType, 48, 52, 56, 60)
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: dCScrollValue1.yMove >= 40
-              ? dCScrollValue1.yMove
-              : dCScrollValue1.yMove < 40
+          bottom: cdPosition1.yMove >= 40
+              ? cdPosition1.yMove
+              : cdPosition1.yMove < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -246,19 +237,19 @@ class _AppViewState extends State<AppView> {
           ),
         ),
         Positioned(
-          left: dCScrollValue1.xMove >= w(wType, 48, 52, 56, 60) &&
-                  dCScrollValue1.xMove <=
+          left: cdPosition1.xMove >= w(wType, 48, 52, 56, 60) &&
+                  cdPosition1.xMove <=
                       (size.width / 2) -
                           (((size.width - w(wType, 156, 164, 172, 180)) / 4) /
                               2)
-              ? dCScrollValue1.xMove
-              : dCScrollValue1.xMove < w(wType, 48, 52, 56, 60)
+              ? cdPosition1.xMove
+              : cdPosition1.xMove < w(wType, 48, 52, 56, 60)
                   ? w(wType, 48, 52, 56, 60)
                   : (size.width / 2) -
                       (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2),
-          bottom: dCScrollValue1.yMove >= 40
-              ? dCScrollValue1.yMove
-              : dCScrollValue1.yMove < 40
+          bottom: cdPosition1.yMove >= 40
+              ? cdPosition1.yMove
+              : cdPosition1.yMove < 40
                   ? 40
                   : h(hType, 202, 218, 234, 250),
           child: CountDown(
@@ -408,14 +399,14 @@ class _AppViewState extends State<AppView> {
     );
   }
 
-  void _setCountdownScrollValue() {
+  void _initCountdownScrollValue() {
     final Size size = MediaQuery.of(context).size;
 
-    dCScrollValue1 = DateCountdownScrollValue(
+    cdPosition1 = PositionValue(
       xMove: w(wType, 48, 52, 56, 60),
       yMove: h(hType, 202, 218, 234, 250),
     );
-    dCScrollValue2 = DateCountdownScrollValue(
+    cdPosition2 = PositionValue(
       xMove: w(wType, 68, 72, 76, 80) +
           ((size.width - w(wType, 156, 164, 172, 180)) / 4),
       yMove: h(hType, 202, 218, 234, 250),
@@ -433,35 +424,35 @@ class _AppViewState extends State<AppView> {
     moveValue = (_pageController.offset / dividedSize) / 2;
 
     if (sV > 0 && sV <= size.height / 3) {
-      dCScrollValue1 = DateCountdownScrollValue(
+      cdPosition1 = PositionValue(
         xMove: w(wType, 48, 52, 56, 60) + sV,
         yMove: h(hType, 202, 218, 234, 250),
       );
-      dCScrollValue2 = DateCountdownScrollValue(
+      cdPosition2 = PositionValue(
         xMove: (w(wType, 68, 72, 76, 80) +
                 ((size.width - w(wType, 156, 164, 172, 180)) / 4)) +
             sV,
         yMove: h(hType, 202, 218, 234, 250),
       );
     } else if (sV > size.height / 3 && sV <= (size.height / 3) * 2) {
-      dCScrollValue1 = DateCountdownScrollValue(
+      cdPosition1 = PositionValue(
         xMove: ((size.width / 2) -
             (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
-      dCScrollValue2 = DateCountdownScrollValue(
+      cdPosition2 = PositionValue(
         xMove: ((size.width / 2) -
             (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
     } else if (sV > (size.height / 3) * 2 && sV <= (size.height / 3) * 3) {
-      dCScrollValue1 = DateCountdownScrollValue(
+      cdPosition1 = PositionValue(
         xMove: ((size.width / 2) -
                 (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)) -
             (sV - ((size.height / 3) * 2)),
         yMove: h(hType, 202, 218, 234, 250) - (sV - (size.height / 3)),
       );
-      dCScrollValue2 = DateCountdownScrollValue(
+      cdPosition2 = PositionValue(
         xMove: ((size.width / 2) -
                 (((size.width - w(wType, 156, 164, 172, 180)) / 4) / 2)) -
             (sV - ((size.height / 3) * 2)),
