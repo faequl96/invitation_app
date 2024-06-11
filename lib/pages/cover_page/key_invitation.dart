@@ -17,13 +17,13 @@ class KeyInvitation extends StatelessWidget {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Container(
-            width: 190,
+            width: 160,
             height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               gradient: const LinearGradient(
                 colors: [
-                  Color.fromARGB(180, 255, 212, 102),
+                  Color.fromARGB(200, 255, 212, 102),
                   Color.fromARGB(240, 255, 198, 192),
                 ],
               ),
@@ -32,7 +32,7 @@ class KeyInvitation extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Buka Segel Undangan",
+                  "Buka Undangan",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
